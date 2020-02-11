@@ -13,12 +13,12 @@
 
 Route::get('/', function () {
     return view('home');
-});
+})->name('home');
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
 Route::get('/produits', function () {
     return view('product');
-});
+})->name('product');
