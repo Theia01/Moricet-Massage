@@ -19,6 +19,4 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/produits', function () {
-    return view('product');
-})->name('product');
+Route::get('/produits', 'ArticleController@getProducts' )->name('product');
