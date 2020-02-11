@@ -31,7 +31,7 @@ confirmation.
 
 ---
 
-### Contributeurs
+## Contributeurs
 
 Les **membres constituant le groupe** sont les suivants :
 
@@ -43,10 +43,10 @@ Les **membres constituant le groupe** sont les suivants :
 
 ---
 
-### Utililiser l'application en local
+## Utililiser l'application en local
 
 
-#### Dépendances requises :
+### Dépendances requises :
 
 Avant toute chose, certaines installations sont **requises** pour pouvoir utiliser ce projet :
 
@@ -54,7 +54,7 @@ Avant toute chose, certaines installations sont **requises** pour pouvoir utilis
 - Un serveur local ([WAMP](http://www.wampserver.com/en/), [XAMPP](https://www.apachefriends.org/download.html) ou autre),
 - [Composer](https://getcomposer.org/download/).
 
-#### Mettre en place le projet
+### Mettre en place le projet
 
 Il vous faut ensuite **cloner le projet :**
 ```sh
@@ -78,7 +78,7 @@ Enfin, **lancez l'application** en utilisant la commande :
 php artisan serve
 ```
 
-#### Compiler le SCSS en CSS
+### Compiler le SCSS en CSS
 
 Si vous souhaitez **compiler le CSS** à chaque changement, tapez cette commande dans un autre terminal :
 ```sh
