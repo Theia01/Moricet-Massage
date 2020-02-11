@@ -5,7 +5,7 @@
 <div class="main">
     <h4>I. A propos de nous</h4>
     <div class="text">
-        <p>La Société 5C, SAS, au capital de 50 000 euros, dont le siège social est à ORVAULT (44700) 213 Route de Rennes, immatriculée au registre du commerce et des sociétés de ORVAULT sous le numéro 123 456 789 représentée par Monsieur Maël DEBON (ci-après la " Société ”).</p>
+        <p>La Société 5C, SAS, au capital de 50 000 euros, dont le siège social est à ORVAULT (44700) 213 Route de Rennes, immatriculée au registre du commerce et des sociétés de ORVAULT sous le numéro 123 456 789 représentée par Monsieur Johan DELEON (ci-après la " Société ”).</p>
 
         <p>La Société propose les services suivants : Fournir une application mobile permettant aux randonneurs de localiser et visiter facilement des lieux insolites autour d'eux.</p>
     </div>
