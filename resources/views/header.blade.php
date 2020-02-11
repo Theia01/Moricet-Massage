@@ -1,6 +1,7 @@
 <div class="header">
+    <img class="logo" src="test.png" alt="logo">
     <ul>
-        <li><a href="{{ route("home") }}">Home</a></li>
+        <li><a href="{{ route("home") }}">Accueil</a></li>
         <li><a href="{{ route("product") }}">Produits</a></li>
         <li><a href="{{ route("contact") }}">Contact</a></li>
     </ul>
