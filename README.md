@@ -1,2 +1,7 @@
-# Moricet-Massage
-Un site de massage insolite
+## Commande
+
+composer install
+
+php artisan key:generate
+
+php artisan serve
