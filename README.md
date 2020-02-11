@@ -43,7 +43,7 @@ Les **membres constituant le groupe** sont les suivants :
 
 ---
 
-## Utililiser l'application en local
+## Utiliser l'application en local
 
 
 ### Dépendances requises :
@@ -82,7 +82,7 @@ php artisan serve
 
 Si vous souhaitez **compiler le CSS** à chaque changement, tapez cette commande dans un autre terminal :
 ```sh
-npm run --watch
+npm run watch
 ```
 
 Pour compiler une seule fois, entrez cette commande :
