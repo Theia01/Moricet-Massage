@@ -1,5 +1,7 @@
 @extends('general')
 
 @section('content')
-<p>home</p>
+<div class="home">
+    <p>home</p>
+</div>
 @endsection

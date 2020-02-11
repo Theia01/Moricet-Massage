@@ -1,5 +1,7 @@
 @extends('general')
 
 @section('content')
-<p>contact</p>
+<div class="contact">
+    <p>contact</p>
+</div>
 @endsection

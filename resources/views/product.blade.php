@@ -1,5 +1,7 @@
 @extends('general')
 
 @section('content')
-<p>produit</p>
+<div class="product">
+    <p>produit</p>
+</div>
 @endsection
