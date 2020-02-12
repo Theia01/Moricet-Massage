@@ -19,3 +19,5 @@ Route::get('/contact', "ContactUsController@show")->name('contact');
 Route::post('/contact', "ContactUsController@send")->name('sendcontact');
 
 Route::get('/produits', 'ArticleController@getProducts' )->name('product');
+
+Route::get('/produit/{name}', 'ArticleController@showProduct');
