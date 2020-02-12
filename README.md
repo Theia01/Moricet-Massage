@@ -89,3 +89,16 @@ Pour compiler une seule fois, entrez cette commande :
 ```sh
 npm run dev
 ```
+
+### Connexion à la base de données
+
+La connexion à la base de données est **requise** pour afficher les informations disponibles sur la page de présentation des produits.
+Cette commande permet d'installer `kreait/laravel-firebase` :
+````sh
+composer require kreait/laravel-firebase
+````
+
+Ensuite, il vous faut télécharger le fichier `cacert.pem`, disponible [à cette adresse](https://curl.haxx.se/ca/cacert.pem).
+Puis déplacez-vous dans le dossier relatif à votre serveur local, puis dans "bin/php/". Entrez ensuite dans le dossier correspondant à votre version de PHP. Placez le fichier téléchargé ici.
+Enfin, il vous suffit de modifier le fichier `php.ini` et de rajouter le lien vers le fichier précédemment rajouté à `curl.cainfo =`. N'oubliez pas de dé-commenter la ligne.
+Puis relancez votre invite de commande et votre serveur.
