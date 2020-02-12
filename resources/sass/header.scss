@@ -18,6 +18,11 @@
         color: black;
         font-weight: 500;
         font-size: 25px;
+        transition-duration: 0.3s;
+    }
+    a:hover {
+        color: #488c03;
+        transition: all 0.3s;
     }
     .current {
         color: #488c03;
