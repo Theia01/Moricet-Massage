@@ -2,7 +2,10 @@
     <ul>
         <li><a href="{{ route("home") }}">Plan du site</a></li>
         <li><a href="legal/cgu.php" target="_blank">CGU</a></li>
-        <li class="last"><a href="{{ route("contact") }}">Contact</a></li>
+        <li><a href="{{ route("contact") }}">Contact</a></li>
+    </ul>
+
+    <ul class="social">
         <li>
             <a href="http://facebook.com" class="fa fa-facebook-official facebookli" target="_blank">
                 <span class="linktext">Facebook</span>
@@ -23,6 +26,8 @@
                 <span class="linktext">LinkedIn</span>
             </a>
         </li>
-        <li class="right"><span>© 2020 Moricet massage</span></li>
+    </ul>
+    <ul class="credits">
+        <li><span>© 2020 Moricet massage</span></li>
     </ul>
 </div>
