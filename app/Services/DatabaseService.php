@@ -28,7 +28,7 @@ class DatabaseService {
     }
 
 
-    static public function test2(){
+    static public function insertProduct(){
     
        
         $newPost = DatabaseService::connecttodb()
@@ -78,26 +78,6 @@ class DatabaseService {
         return "Test numéro 1";
     }
 
-    static public function testget(){
-    
-       
-        $createPost = DatabaseService::connecttodb()
-        ->getReference('blog/posts')
-        ->getvalue();      
-        $valret = response()->json($createPost);
-
-        $date_jour = $valret->{'original'};
-        //var_dump($date_jour);
-
-        foreach ($date_jour as $key => $value){
-            var_dump($date_jour[$key] );
-            var_dump($value);
-            echo '<br><br><br>'; 
-        }
-
-        die;
-        return response()->json($createPost);
-    }
 
 
     static public function connecttodb(){
