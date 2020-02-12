@@ -204,6 +204,9 @@ body {
         }
     }
     @media only screen and (max-width: 500px) {
+        .description {
+            padding-top: 15%;
+        }
         .adresse {
             display: none;
         }
