@@ -2,10 +2,26 @@
     <ul>
         <li><a href="{{ route("home") }}">Plan du site</a></li>
         <li><a href="{{ route("home") }}">CGU</a></li>
-        <li><a href="{{ route("contact") }}">Contact</a></li>
-        <li><a class="social first" href="http://twitter.com">Twitter</a></li>
-        <li><a class="social" href="http://linkedin.com">LinkedIn</a></li>
-        <li><a class="social" href="http://facebook.com">Facebook</a></li>
-        <li><a class="social" href="http://instagram.com">Instagram</a></li>
+        <li class="last"><a href="{{ route("contact") }}">Contact</a></li>
+        <li>
+            <a href="http://facebook.com" class="fa fa-facebook-official facebookli">
+                <span class="linktext">Facebook</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://instagram.com" class="fa fa-instagram instagramli">
+                <span class="linktext">Instagram</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://twitter.com" class="fa fa-twitter twitterli">
+                <span class="linktext">Twitter</span>
+            </a>
+        </li>
+        <li>
+            <a href="http://linkedin.com" class="fa fa-linkedin linkedinli">
+                <span class="linktext">LinkedIn</span>
+            </a>
+        </li>
     </ul>
 </div>
