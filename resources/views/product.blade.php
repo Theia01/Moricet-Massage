@@ -3,7 +3,22 @@
 @section('content')
 
 @foreach ($massages as $massage)
-    <p>This is massage {{ $massage['nom'] }}</p>
+    <div>
+        <div>
+            <img src="{{ asset('images/'.$massage['image']) }}">
+            <a href="produit/{{strtolower(str_replace(' ','-',$massage['nom'])) }}">
+            <!-- ,'url'=> -->
+            <div>
+                <p> En savoir plus </p>
+            </div>
+            </a>
+        </div>
+
+        <div>
+            <p>{{ $massage['nom']}}</p>
+            <p>{{$massage['resume']}}</p>
+        </div>
+    </div>
 @endforeach
 
 @endsection

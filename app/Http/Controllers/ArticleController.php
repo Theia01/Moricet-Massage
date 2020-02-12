@@ -9,7 +9,7 @@ class ArticleController extends Controller
 {
     public function getProducts(){
         $massages = DatabaseService::getMassages();
-        return view('product', ['massages'=>$massages] );
+        return view('product', ['massages'=>$massages ] );
     }
 
 }

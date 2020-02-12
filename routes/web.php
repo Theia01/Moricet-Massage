@@ -20,3 +20,5 @@ Route::get('/contact', function () {
 })->name('contact');
 
 Route::get('/produits', 'ArticleController@getProducts' )->name('product');
+
+Route::get('/produit/{name}', 'ArticleController@showProduct');
