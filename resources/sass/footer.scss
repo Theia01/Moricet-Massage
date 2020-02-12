@@ -69,22 +69,33 @@
         color: #3b5998;
         transition: all 0.3s;
     }
+    .right {
+        margin-left: 150px;
+    }
 
     @media only screen and (max-width: 600px) {
         a {
             font-size: 14px;
         }
-        .logo {
-            display: none;
+        .last {
+            margin-right: 0;
+        }
+        ul{
+            margin-top: 16px;
         }
         li {
             margin: 0 20px;
             margin-bottom: 10px;
         }
-        .social {
+        .logo,
+        .social,
+        .facebookli,
+        .twitterli,
+        .instagramli,
+        .linkedinli,
+        .right {
             display: none;
             width: 0;
-            height: 0;
         }
     }
 }
