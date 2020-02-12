@@ -17,15 +17,34 @@
         margin: 15vh 15% 0px 15%;
         padding: 50px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-        border-radius: 10px 10px 0px 0px;
         background-color: #FFF;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
-        height: 85vh;
+      }
+
+      .logo{
+        display: flex;
+      }
+
+      .logo img{
+        height: 100px;
+        width: 100px;
+      }
+
+      .signature{
+        margin-left: 20px;
+        line-height: 0.01;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
       }
 
       html{
         background-color: #92DB6C;
         font-family: 'Poppins', sans-serif;
+      }
+
+      body{
+          margin: 0px;
       }
     </style>
   </body>
