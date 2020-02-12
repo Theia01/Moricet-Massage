@@ -20,6 +20,11 @@
         color: black;
         font-weight: 400;
         font-size: 15px;
+        transition-duration: 0.3s;
+    }
+    a:hover {
+        color: #488c03;
+        transition: all 0.3s;
     }
     .logo {
         height: 50px;
@@ -41,11 +46,28 @@
         position: relative;
         margin-bottom: 6px;
     }
-    .social {
-    }
 
-    .first {
-        margin-left: 175px;
+    .last {
+        margin-right: 170px;
+    }
+    .linktext {
+        font-family: 'Poppins', sans-serif;
+    }
+    .twitterli:hover {
+        color: #00acee;
+        transition: all 0.3s;
+    }
+    .linkedinli:hover {
+        color: #0e76a8;
+        transition: all 0.3s;
+    }
+    .instagramli:hover {
+        color: #f2003c;
+        transition: all 0.3s;
+    }
+    .facebookli:hover {
+        color: #3b5998;
+        transition: all 0.3s;
     }
 
     @media only screen and (max-width: 600px) {
