@@ -23,6 +23,6 @@
                 <span class="linktext">LinkedIn</span>
             </a>
         </li>
-        <li class="right"><span>© 2020 moricet-massage</span></li>
+        <li class="right"><span>© 2020 Moricet massage</span></li>
     </ul>
 </div>
