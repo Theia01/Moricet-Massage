@@ -20,17 +20,17 @@
                     <img src="{{ asset('images/salon1.png') }}" alt="" width="640" height="310" />
                     <figcaption>Salle de massage double</figcaption>
 
-                </figure><!--
-			--><figure>
+                </figure>
+			    <figure>
                     <img src="{{ asset('images/salon2.png') }}" alt="" width="640" height="310" />
-                    <figcaption>Salle de massage privé</figcaption>
-                </figure><!--
-			--><figure>
+                    <figcaption>Salle de massage privée</figcaption>
+                </figure>
+			    <figure>
                     <img src="{{ asset('images/salon3.png') }}" alt="" width="640" height="310" />
-                    <figcaption>Salle de massage basic</figcaption>
+                    <figcaption>Salle de massage basique</figcaption>
 
-                </figure><!--
-			--><figure>
+                </figure>
+			    <figure>
                     <img src="{{ asset('images/salon4.jpg') }}" alt="" width="640" height="310" />
                     <figcaption>Salle de massage détente</figcaption>
                 </figure>
