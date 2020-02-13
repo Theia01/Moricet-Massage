@@ -33,7 +33,7 @@ confirmation.
 
 ## Plan du site
 
-![Sitemap](public/images/sitemap.png | width=40)
+![Sitemap](public/images/sitemap.png)
 
 ---
 
