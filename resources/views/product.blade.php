@@ -5,7 +5,7 @@
 @foreach ($massages as $massage)
     <div>
         <div>
-            <img src="{{ asset('images/'.$massage['image']) }}">
+            <img alt="massage" src="{{ asset('images/'.$massage['image']) }}">
             <a href="produit/{{strtolower(str_replace(' ','-',$massage['nom'])) }}">
             <!-- ,'url'=> -->
             <div>

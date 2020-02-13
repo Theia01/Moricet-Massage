@@ -1,6 +1,5 @@
 <div class="footer">
     <ul>
-        <li><a href="{{ route("home") }}">Plan du site</a></li>
         <li><a href="legal/cgu.php" target="_blank">CGU</a></li>
         <li><a href="{{ route("contact") }}">Contact</a></li>
     </ul>
