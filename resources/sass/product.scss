@@ -59,11 +59,13 @@ body {
 .bloc_image_l>img{
     width: 300px;
     box-shadow: -10px -10px #F2D852, 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    z-index: -1;
 }
 
 .bloc_image_r>img{
     width: 300px;
     box-shadow: 10px -10px #488C03, 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+    z-index: -1;
 }
 
 
@@ -115,4 +117,59 @@ body {
 .button_sp>p{
     margin: 0;
     line-height: 40px;
+}
+
+.mobile{
+    display: none;
+}
+
+@media (max-width: 770px) {
+
+    .bloc_m{
+        display: block;
+    }
+
+    .bloc_image_l{
+        text-align: center;
+        width: 100%;
+    }
+
+    .bloc_image_r{
+        text-align: center;
+        width: 100%;
+    }
+
+    .bloc_texte{
+        margin-top: 20px;
+    }
+
+    .nom{
+        text-align: center;
+    }
+
+    .mobile{
+        display: block;
+    }
+
+    .screen{
+        display: none;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .bloc_texte{     
+margin-top: 20px;
+padding-left: 5px;
+padding-right: 5px;
+text-align: left;
+    }
+
+    .bloc_image_l > img {
+        width: 75vw;
+    }
+
+    .bloc_image_r > img {
+        width: 75vw;
+    }
 }

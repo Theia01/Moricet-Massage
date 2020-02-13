@@ -25,6 +25,11 @@
     @else
     <div  class="bloc_m right">
       
+        <div class="bloc_image_r mobile">
+            <img alt="massage" src="{{ asset('images/'.$massage['image']) }}">
+            
+        </div>
+
         <div class="bloc_texte">
             <p class="nom">{{ $massage['nom']}}</p>
             <p class="desc"><?= html_entity_decode ($massage['resume']) ?></p>
@@ -36,7 +41,7 @@
             </a>
         </div>
 
-        <div class="bloc_image_r">
+        <div class="bloc_image_r screen">
             <img alt="massage" src="{{ asset('images/'.$massage['image']) }}">
             
         </div>
