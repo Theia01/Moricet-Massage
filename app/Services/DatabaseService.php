@@ -27,6 +27,25 @@ class DatabaseService {
 
     }
 
+    static public function getOneMassageByName($name){
+        $getM = DatabaseService::connecttodb()
+        ->getReference('produits')
+        ->orderByChild('nom_url')
+        ->equalTo($name)
+        ->getvalue(); 
+
+        $r = response()->json($getM);
+        $all_massage = $r->{'original'};
+
+        if(sizeof($all_massage)>0){
+            return array_values($all_massage)[0];
+        } else {
+            return null;
+        }
+        return $all_massage;
+
+    }
+
 
     static public function insertProduct(){
     
