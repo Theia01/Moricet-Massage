@@ -41,11 +41,11 @@ confirmation.
 
 Les **membres constituant le groupe** sont les suivants :
 
-- [Alexandre Garault](https://github.com/Dreeion)
-- [Axelle Guinaudeau](https://github.com/Theia01)
-- [Camille Naulet](https://github.com/camillenaulet03)
-- [Johan Deleon](https://github.com/Amestyale)
-- [Maël Debon](https://github.com/maeldebon)
+- Alexandre Garault ([Dreeion](https://github.com/Dreeion))
+- Axelle Guinaudeau ([Theia01](https://github.com/Theia01))
+- Camille Naulet ([camillenaulet03](https://github.com/camillenaulet03))
+- Johan Deleon ([Amestyale](https://github.com/Amestyale))
+- Maël Debon ([maeldebon](https://github.com/maeldebon))
 
 ---
 
