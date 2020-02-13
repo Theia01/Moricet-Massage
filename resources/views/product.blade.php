@@ -2,23 +2,51 @@
 
 @section('content')
 
+<div class="container">
 @foreach ($massages as $massage)
-    <div>
-        <div>
+    @if ( ($loop->index)%2 == 0 )
+    <div  class="bloc_m left">
+        <div class="bloc_image_l">
             <img alt="massage" src="{{ asset('images/'.$massage['image']) }}">
-            <a href="produit/{{strtolower(str_replace(' ','-',$massage['nom'])) }}">
+            
+        </div>
+
+        <div class="bloc_texte">
+            <p class="nom">{{ $massage['nom']}}</p>
+            <p class="desc"><?= html_entity_decode ($massage['resume']) ?></p>
+            <a class="lien lien_l" href="produit/{{strtolower(str_replace(' ','-',$massage['nom'])) }}">
             <!-- ,'url'=> -->
-            <div>
+            <div class="button_sp">
+                <p> En savoir plus </p>
+            </div>
+            </a>
+        </div>
+    </div>
+    @else
+    <div  class="bloc_m right">
+      
+        <div class="bloc_texte">
+            <p class="nom">{{ $massage['nom']}}</p>
+            <p class="desc"><?= html_entity_decode ($massage['resume']) ?></p>
+            <a class="lien lien_r" style="float:left;" href="produit/{{strtolower(str_replace(' ','-',$massage['nom'])) }}">
+            <!-- ,'url'=> -->
+            <div class="button_sp">
                 <p> En savoir plus </p>
             </div>
             </a>
         </div>
 
-        <div>
-            <p>{{ $massage['nom']}}</p>
-            <p>{{$massage['resume']}}</p>
+        <div class="bloc_image_r">
+            <img alt="massage" src="{{ asset('images/'.$massage['image']) }}">
+            
         </div>
+
+
     </div>
+
+    @endif
 @endforeach
+</div>
+
 
 @endsection
