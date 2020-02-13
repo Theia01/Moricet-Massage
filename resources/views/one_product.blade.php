@@ -35,12 +35,12 @@
     </div>
     <div id="description">
         <div id="description_produit">
-            <p><span class="bold">Description:</span> {{ $massage['description']}}yfuskfues yughfsl cfrhsc gfrh cghs lcghrc lghrecl grhjcgfr cqghejlc gfhercjl felqgf jhlg chea clgeahzcg zahlghc egzjhcl aeyugfkjw gswkgfes geukfghref yekfgeqziqflq uilfguifgeiuw</p>
+            <p><span class="bold">Description:</span> {{ $massage['description']}}</p>
         </div>
         <div id="produit">
             <p><span class="bold">Produits:</span> {{ $massage['produits']}}</p>
-            <p><span class="bold">Bienfaits:</span> {{ $massage['bienfaits']}}hueslfgyres wcgiyelqvnfjkslv hvueislvhreuivhe heuq:vhqerlivbwgfhreiqgf gufileqgfiueqlgfb</p>
-            <p><span class="bold">Allergènes:</span> {{ $massage['allergies']}}behqkfg fgyieqlgfzqif gfiqulfgeqlfg gflqg f</p>
+            <p><span class="bold">Bienfaits:</span> {{ $massage['bienfaits']}}</p>
+            <p><span class="bold">Allergènes:</span> {{ $massage['allergies']}}</p>
         </div>
     </div>
 </div>
