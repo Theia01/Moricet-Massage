@@ -3,7 +3,6 @@
         <li><a href="legal/cgu.php" target="_blank">CGU</a></li>
         <li><a href="{{ route("contact") }}">Contact</a></li>
     </ul>
-
     <ul class="social">
         <li>
             <a href="http://facebook.com" class="fa fa-facebook-official facebookli" target="_blank">
