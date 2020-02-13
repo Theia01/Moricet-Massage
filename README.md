@@ -31,6 +31,12 @@ confirmation.
 
 ---
 
+## Plan du site
+
+![Sitemap](public/images/sitemap.png)
+
+---
+
 ## Contributeurs
 
 Les **membres constituant le groupe** sont les suivants :
