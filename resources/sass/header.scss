@@ -58,11 +58,16 @@
             font-size: 21px;
         }
         .logo {
+            width: 0;
             display: none;
         }
         li {
             margin: 0 10px;
             margin-top: 10px;
+        }
+        ul {
+            text-align: left;
+            margin-right: 0;
         }
     }
 }
