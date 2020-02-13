@@ -18,9 +18,9 @@
                             <h2 class="h2">
                                 @foreach ($tech['prix'] as $key => $tarif)
                                     @if ($loop->first)
-                                        {{ formTime($tarif['durée'],$tarif['tarif']) }}
+                                        {{ formTime($tarif['durée'],$tarif['tarif']+$massage['prix']) }}
                                     @else
-                                        {{ " / ".formTime($tarif['durée'],$tarif['tarif']) }}
+                                        {{ " / ".formTime($tarif['durée'],$tarif['tarif']+$massage['prix']) }}
                                     @endif
                                 @endforeach
                             </h2>
