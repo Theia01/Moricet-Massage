@@ -27,12 +27,17 @@ class ContactUsController extends Controller
          'message' => 'required|max:1000'
          ]);
 
-         Mail::to('moricet-massage@gmail.com')
+        try {
+            Mail::to('moricet-massage@gmail.com')
             ->send(new Contact($request->except('_token')));
+        } catch (Exception $e) {
+            //report($e);
+            return redirect('contact')->with('error', 'Petit problème technique, veuillez réessayer plus tard.');
+        }  
 
         Mail::to($request->email)
             ->send(new ConfirmationContact($request->except('_token')));
 
-        return redirect()->route("contact");
+        return redirect('contact')->with('success', 'Mail envoyé !');
    }
 }

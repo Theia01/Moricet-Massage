@@ -7,6 +7,18 @@
     <h2>Contactez-nous</h2>
     <p>Vous avez une question, une suggestion ou une remarque ? Prenez contact avec nous via ce formulaire !</p>
 
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+
+    @if (session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
+
     {!! Form::open(['route'=>'sendcontact']) !!}
         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
             {!! Form::label('Prénom:') !!}
