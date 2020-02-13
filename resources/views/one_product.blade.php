@@ -16,6 +16,15 @@
           <label class="label_apple label_{{$key}}" for="{{$tech['description']}}">{{$tech['nom']}}</label>
           <div class="content content_apple"><span class="picto" style="background-image:url('{{ asset('images/'.$tech['image']) }} "></span>
             <h1>{{$tech['nom']}}</h1>
+            <h2 class="h2"> 
+            @foreach ($tech['prix'] as $key => $tarif)
+              @if ($loop->first) 
+              {{ formTime($tarif['durée'],$tarif['tarif']) }}
+              @else
+              {{ " / ".formTime($tarif['durée'],$tarif['tarif']) }}
+              @endif 
+            @endforeach
+            </h2>
             <p>{{$tech['description']}}</p>
           </div>
         </li>
