@@ -31,10 +31,15 @@
         color: #488c03;
     }
     .logo {
-        height: 50px;
-        width: 50px;
+        margin-top: 5px;
+        height: 80px;
+        width: 80px;
         left: 10px;
         position: absolute;
+        background-color: #fcfaed;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        padding: 10px;
     }
     ul{
         margin-right: 30px;
