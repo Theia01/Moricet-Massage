@@ -44,7 +44,7 @@
         </div>
     <div class="localisation">
     <img class="adresse" src="{{ asset('images/map.jpg') }}"  alt="adresse" />
-        <div>
+        <div class="text">
             <p class="title">Venez à notre institut pour prendre rendez-vous...</p>
             <p class="presentation">Vous pouvez nous trouver à l’adresse suivante :<br>
             <br>4 rue Emile Masson<br> 44000, Nantes</p>
