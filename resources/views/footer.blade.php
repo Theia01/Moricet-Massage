@@ -1,29 +1,32 @@
 <div class="footer">
     <ul>
-        <li><a href="legal/cgu.php" target="_blank">CGU</a></li>
-        <li><a href="{{ route("contact") }}">Contact</a></li>
+        <li><a href="legal/cgu.php" target="_blank" class="footer_green">CGU</a></li>
+        <li><a href="{{ route("contact") }}" class="footer_green">Contact</a></li>
     </ul>
     <ul class="social">
+    @php
+    $all_networks = \App\Services\SocialNetworkService::getAllSocialNetwork();
+    @endphp
+
+        @foreach (json_decode($all_networks) as $key => $net)
         <li>
-            <a href="http://facebook.com" class="fa fa-facebook-official facebookli" target="_blank">
-                <span class="linktext">Facebook</span>
+            <a href="{{$net->url}}" class="{{$net->footer_icon}} {{$net->reseau.'li'}} " target="_blank">
+                <span class="linktext">{{$net->reseau}} </span>
             </a>
         </li>
-        <li>
-            <a href="http://instagram.com" class="fa fa-instagram instagramli" target="_blank">
-                <span class="linktext">Instagram</span>
-            </a>
-        </li>
-        <li>
-            <a href="http://twitter.com" class="fa fa-twitter twitterli" target="_blank">
-                <span class="linktext">Twitter</span>
-            </a>
-        </li>
-        <li>
-            <a href="http://linkedin.com" class="fa fa-linkedin linkedinli" target="_blank">
-                <span class="linktext">LinkedIn</span>
-            </a>
-        </li>
+
+        <style>
+            .{{$net->reseau.'li'}} {
+            }
+            .{{$net->reseau.'li'}}:hover {
+                    color: {{$net->color}};
+                    transition: all 0.3s;
+                    text-decoration:none;    
+            }
+        </style>
+        @endforeach
+       
+        
     </ul>
     <ul class="credits">
         <li><span>© 2020 Moricet massage</span></li>
