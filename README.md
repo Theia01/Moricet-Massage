@@ -100,7 +100,7 @@ Pour compiler une seule fois, entrez cette commande :
 npm run dev
 ```
 
-### Connexion à la base de données
+### Connexion à la base de données Firebase
 
 La connexion à la base de données est **requise** pour afficher les informations disponibles sur la page de présentation des produits.
 Cette commande permet d'installer `kreait/laravel-firebase` :
@@ -112,3 +112,20 @@ Ensuite, il vous faut télécharger le fichier `cacert.pem`, disponible [à cett
 Puis déplacez-vous dans le dossier relatif à votre serveur local, puis dans "bin/php/". Entrez ensuite dans le dossier correspondant à votre version de PHP. Placez le fichier téléchargé ici.
 Enfin, il vous suffit de modifier le fichier `php.ini` et de rajouter le lien vers le fichier précédemment rajouté à `curl.cainfo =`. N'oubliez pas de dé-commenter la ligne.
 Puis relancez votre invite de commande et votre serveur.
+
+### Connexion à la base de données de l'ORM
+
+Pour migrer la base de données :
+```sh
+php artisan migrate
+```
+
+Nous avons mis à disposition de fausses données à insérer dans les tables. Pour cela, il faut regénérer le composer avec la commande suivante :
+```sh
+composer dump-autoload
+```
+
+Enfin, il faut exécuter la commande
+```sh
+php artisan db:seed --class=DatabaseSeeder
+```
