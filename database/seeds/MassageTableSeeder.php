@@ -13,6 +13,7 @@ class MassageTableSeeder extends Seeder
     public function run()
     {
         DB::table('massage')->insert([
+            'id' => 1,
             'nom' => 'Massage au Miel',
             'nom_url' => 'massage-au-miel',
             'prix' => '35',
@@ -25,6 +26,7 @@ class MassageTableSeeder extends Seeder
         ]);
         
         DB::table('massage')->insert([
+            'id' => 2,
             'nom' => 'Massage à l\'Aloé vera',
             'nom_url' => 'massage-a-l-aloe-vera',
             'prix' => 35,
@@ -37,6 +39,7 @@ class MassageTableSeeder extends Seeder
         ]);
 
         DB::table('massage')->insert([
+            'id' => 3,
             'nom' => 'Massage à l\'huile essentielle de citron',
             'nom_url' => 'massage-a-l-huile-essentielle-de-citron',
             'prix' => 35,
