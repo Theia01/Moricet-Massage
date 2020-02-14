@@ -39,21 +39,24 @@ body {
 
     .localisation {
         background-color: rgba(96, 180, 11, 0.6);
+        display: flex;
+        padding-bottom: 3%;
         .titre{
+            display: inline;
             text-align: left;
             font-size: 28px;
-            padding-top: 40px;
             margin-bottom: 20px;
         }
 
         .text {
-            margin-bottom: 0;
             padding: 5px;
+            display: inline;
         }
 
         .presentation {
             margin-top: 5%;
             font-size: 20px;
+            display: inline;
         }
 
         .adresse {
@@ -61,7 +64,7 @@ body {
             margin-left: 2%;
             margin-right: 2%;
             height: 315px;
-            object-fit: cover;
+            display: inline;
         }
     }
 
@@ -130,7 +133,6 @@ body {
             text-align: left;
             font-size: 28px;
             padding-top: 40px;
-            margin-bottom: 20px;
             margin-left: 5%;
         }
 
@@ -263,18 +265,17 @@ body {
 
         .message {
             margin-left: 5%;
-            margin-top: 7%;
             margin-right: 2%;
             font-size: 20px;
         }
     }
     @media only screen and (max-width: 1200px) {
-        .adresse {
-            height: 100px;
+        .localisation .adresse {
+            height: 150px;
         }
     }
     @media only screen and (max-width: 900px) {
-        .video, .slideshow, .adresse {
+        .video, .slideshow {
             width: 0;
             display: none;
         }
@@ -285,6 +286,19 @@ body {
             max-width: 300px;
             min-height: 200px;
             max-height: 200px;
+        }
+        .title {
+            width: 100%;
+        }
+        .localisation {
+            display: inline-block;
+            .title {
+                width: 100%;
+            }
+            .presentation {
+                display: block;
+                padding-left: 5%;
+            }
         }
     }
     @media only screen and (max-width: 500px) {

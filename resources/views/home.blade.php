@@ -8,13 +8,11 @@
             <p class="title">Moricet Massage vous promet des massages relaxants...</p>
             <p class="presentation">Moment de détente ultime pour lâcher-prise et faire le plein d'énergie, le massage bénéficie de techniques ancestrales tirées de la médecine chinoise traditionnelle, de l'ayurveda -médecine indienne- ou encore du Japon, de Bali ou de la Thaïlande. Véritable moment de relaxation, le massage nous transporte dans un autre espace-temps où l'art du geste est roi. Pour que le soin soit efficace, nous vous laissons choisir un soin en fonction de vos envies. Venez découvrir nos différents produits dans notre institut.</p>
         </div>
-        </div>
+    </div>
     
     <div class="carousel">
-        <div>
-            <p class="title">... Dans un cadre adapté à vos besoins et préférences</p>
-            <p class="message">Notre institut vous accueille pour un moment de bien-être et de détente. Nous disposons de différentes salles de massage en fonction de vos envies.</p>
-        </div>
+        <p class="title">... Dans un cadre adapté à vos besoins et préférences</p>
+        <p class="message">Notre institut vous accueille pour un moment de bien-être et de détente. Nous disposons de différentes salles de massage en fonction de vos envies.</p>
 
         <section class="slideshow">
         <div class="container_c">
@@ -43,7 +41,7 @@
         </section>
         </div>
     <div class="localisation">
-    <img class="adresse" src="{{ asset('images/map.jpg') }}"  alt="adresse" />
+        <img class="adresse" src="{{ asset('images/map.jpg') }}"  alt="adresse" />
         <div class="text">
             <p class="title">Venez à notre institut pour prendre rendez-vous...</p>
             <p class="presentation">Vous pouvez nous trouver à l’adresse suivante :<br>
