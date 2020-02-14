@@ -8,6 +8,8 @@
 }
 
 .header{
+    position: fixed;
+    width: 100%;
     background-color: #fcfaed;
     top: 0;
     margin: 0;
@@ -18,15 +20,26 @@
         color: black;
         font-weight: 500;
         font-size: 25px;
+        transition-duration: 0.3s;
+    }
+    a:hover {
+        text-decoration: none;
+        color: #488c03;
+        transition: all 0.3s;
     }
     .current {
         color: #488c03;
     }
     .logo {
-        height: 50px;
-        width: 50px;
+        margin-top: 5px;
+        height: 80px;
+        width: 80px;
         left: 10px;
         position: absolute;
+        background-color: #fcfaed;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+        padding: 10px;
     }
     ul{
         margin-right: 30px;
@@ -35,6 +48,7 @@
     }
 
     li{
+        text-decoration: none;
         margin: 0 20px;
         display: inline-block;
         line-height: normal;
@@ -49,11 +63,16 @@
             font-size: 21px;
         }
         .logo {
+            width: 0;
             display: none;
         }
         li {
             margin: 0 10px;
             margin-top: 10px;
+        }
+        ul {
+            text-align: left;
+            margin-right: 0;
         }
     }
 }

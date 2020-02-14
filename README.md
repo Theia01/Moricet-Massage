@@ -28,6 +28,16 @@ système de page de
 contact avec email de
 confirmation.
 - Proposer un plan de site.
+- Mettre en place une base de données Eloquent (bonus)
+- Disposer d'un footer dynamique (bonus)
+- Utiliser un service similaire à DatabaseService mais récupérant les données depuis un fichier local (bonus)
+- Vérifier la validité des adresses mail entrées (bonus)
+
+---
+
+## Plan du site
+
+![Sitemap](public/images/sitemap.png)
 
 ---
 
@@ -35,11 +45,11 @@ confirmation.
 
 Les **membres constituant le groupe** sont les suivants :
 
-- [Alexandre Garault](https://github.com/Dreeion)
-- [Axelle Guinaudeau](https://github.com/Theia01)
-- [Camille Naulet](https://github.com/camillenaulet03)
-- [Johan Deleon](https://github.com/Amestyale)
-- [Maël Debon](https://github.com/maeldebon)
+- Alexandre Garault ([Dreeion](https://github.com/Dreeion))
+- Axelle Guinaudeau ([Theia01](https://github.com/Theia01))
+- Camille Naulet ([camillenaulet03](https://github.com/camillenaulet03))
+- Johan Deleon ([Amestyale](https://github.com/Amestyale))
+- Maël Debon ([maeldebon](https://github.com/maeldebon))
 
 ---
 
@@ -88,4 +98,34 @@ npm run watch
 Pour compiler une seule fois, entrez cette commande :
 ```sh
 npm run dev
+```
+
+### Connexion à la base de données Firebase
+
+La connexion à la base de données est **requise** pour afficher les informations disponibles sur la page de présentation des produits.
+Cette commande permet d'installer `kreait/laravel-firebase` :
+````sh
+composer require kreait/laravel-firebase
+````
+
+Ensuite, il vous faut télécharger le fichier `cacert.pem`, disponible [à cette adresse](https://curl.haxx.se/ca/cacert.pem).
+Puis déplacez-vous dans le dossier relatif à votre serveur local, puis dans "bin/php/". Entrez ensuite dans le dossier correspondant à votre version de PHP. Placez le fichier téléchargé ici.
+Enfin, il vous suffit de modifier le fichier `php.ini` et de rajouter le lien vers le fichier précédemment rajouté à `curl.cainfo =`. N'oubliez pas de dé-commenter la ligne.
+Puis relancez votre invite de commande et votre serveur.
+
+### Connexion à la base de données de l'ORM
+
+Pour migrer la base de données :
+```sh
+php artisan migrate
+```
+
+Nous avons mis à disposition de fausses données à insérer dans les tables. Pour cela, il faut regénérer le composer avec la commande suivante :
+```sh
+composer dump-autoload
+```
+
+Enfin, il faut exécuter la commande
+```sh
+php artisan db:seed --class=DatabaseSeeder
 ```

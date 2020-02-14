@@ -1,0 +1,32 @@
+{
+    "nom" : "Massage au Miel",
+    "prix" : 35,
+    "resume" : "Un massage délicat à base de miel bio",
+    "image" : "image_random.png",
+    "techniques" : [
+        {
+        "nom" : "Massage Hawaïen",
+        "description" : "Massage avec un collier de fleurs et une jupe banane",
+        "image" : "image_random2.png",
+        "prix" : [
+            {
+            "tarif" : 50,
+            "durée" : 30
+            },
+            {
+            "tarif" : 90,
+            "durée" : 60
+            },
+            {
+            "tarif" : 90,
+            "durée" : 60
+            }
+        ]
+        }
+    ],
+    "produits " : "Miel",
+    "description" : "Flemme",
+    "bienfaits" : "Tout plein partout",
+    "allergies" : "Les allergies c'est pour les faibles"
+
+}
