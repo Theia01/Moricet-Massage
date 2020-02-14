@@ -13,10 +13,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             MassageTableSeeder::class,
-            MassageTechniqueTableSeeder::class,
             TarifTableSeeder::class,
             TechniqueTableSeeder::class,
             TechniqueTarifTableSeeder::class,
+            MassageTechniqueTableSeeder::class,
         ]);
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class TechniqueTarifTableSeeder
+class TechniqueTarifTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -42,17 +42,17 @@ class TechniqueTarifTableSeeder
             'id_tarif' => 3,
         ]);
 
-        B::table('technique_tarif')->insert([
+        DB::table('technique_tarif')->insert([
             'id_technique' => 3,
             'id_tarif' => 1,
         ]);
 
-        B::table('technique_tarif')->insert([
+        DB::table('technique_tarif')->insert([
             'id_technique' => 3,
             'id_tarif' => 2,
         ]);
 
-        B::table('technique_tarif')->insert([
+        DB::table('technique_tarif')->insert([
             'id_technique' => 3,
             'id_tarif' => 3,
         ]);
