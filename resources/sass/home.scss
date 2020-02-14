@@ -6,18 +6,37 @@ body {
 }
 
 .home{
+    .title{
+        width: 60vw;
+        text-align: left;
+        font-size: 32px;
+        padding-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .under_title{
+        font-style: italic;
+    font-size: 24px;
+    color: #FCFAED;
+    /* margin-top: -50px; */
+    padding: 0;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+
+
     .description {
         padding-top: 5%;
-        background-color: rgba(242, 216, 82, 0.4);
+        background-color:  rgba(96, 180, 11, 0.6);
         display: flex;
 
         .presentation {
-            margin-left: 5%;
+            margin-left: 0%;
             margin-top: 4%;
             margin-right: 2%;
             width: 1000px;
             text-align: justify;
             font-size: 20px;
+            padding-right: 2%;
         }
 
         .video {
@@ -31,42 +50,146 @@ body {
     }
 
     .localisation {
-        background-color: rgba(72, 140, 3, 0.4);
+        background-color: rgba(96, 180, 11, 0.6);
         display: flex;
 
+        .titre{
+            width: 45vw;
+            text-align: left;
+            font-size: 28px;
+            padding-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .under_title{
+            font-style: italic;
+        font-size: 20px;
+        color: #FCFAED;
+        /* margin-top: -50px; */
+        padding: 0;
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        }
+
         .presentation {
-            margin-left: 2%;
-            margin-top: 10%;
+           // margin-left: 2%;
+            margin-top: 5%;
             font-size: 20px;
         }
 
         .adresse {
             margin-top: 2%;
             margin-bottom: 2%;
-            margin-left: 8%;
+            margin-left: 2%;
             margin-right: 2%;
             height: 315px;
-            width: auto;
+            width: 42vw;
+            object-fit: cover;
         }
     }
 
+    .social_network {
+        background-color: rgba(242, 216, 82, 0.6);
+        display: block;
+        margin-bottom: 40px;
+        min-height: 32vw;
+        .presentation {
+            margin-left: 2%;
+            margin-top: 10%;
+            font-size: 20px;
+        }
+
+        .title{
+            width: 60%;
+            text-align: center;
+            font-size: 32px;
+            padding-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        .under_title{
+            font-style: italic;
+        font-size: 18px;
+        color: #FCFAED;
+        /* margin-top: -50px; */
+        padding: 0;
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .adresse {
+            margin-bottom: 2%;
+            margin-left: auto;
+            margin-right: 2%;
+            height: 315px;
+            width: 30%;
+            float: right;
+            margin-top: -50px;
+        }
+
+        .reseaux{
+            width: 60%;
+            display: inline-block;
+            padding-top: 50px;
+            margin-bottom: 30px;
+        }
+
+        .sn>img{
+            width: 75px;
+            box-shadow: none;
+            display: inline-block;
+        }
+        .sn>p{
+            padding-left: 10px;
+            box-shadow: none;
+            display: inline-block;
+        }
+
+        .sn{
+            width: 49%;
+            display: inline-block;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+    }
+
+
     .carousel {
         padding-bottom: 50px;
-        background-color: rgba(242, 216, 82, 0.4);
+        background-color:  rgba(242, 216, 82, 0.6);
         display: flex;
+        z-index: -1;
+        
+        .title{
+            width: 50vw;
+            text-align: left;
+            font-size: 28px;
+            padding-top: 40px;
+            margin-bottom: 20px;
+            margin-left: 5%;
+        }
+
+        .under_title{
+            font-style: italic;
+        font-size: 20px;
+        color: #FCFAED;
+        /* margin-top: -50px; */
+        padding: 0;
+        text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+        }
 
         .slideshow {
             position: relative;
-            width: 700px;
-            height: 340px;
-            padding: 15px;
-            margin: 2%;
+            width: 640px;
+            height: auto;
             border: 1px solid #ddd;
             background: #FFF;
             /* CSS3 effects */
             background: linear-gradient(#FFF, #FFF 20%, #EEE 80%, #DDD);
             border-radius: 2px 2px 2px 2px;
             box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+            margin-top: 2%;
+            margin-bottom: 2%;
+            margin-left: 5%;
+            
         }
 
         .slideshow:before,
@@ -93,7 +216,7 @@ body {
         }
 
         /* gestion des dimensions et débordement du conteneur */
-        .slideshow .container {
+        .slideshow .container_c {
             position: relative;
             width: 640px;
             height: 310px;
@@ -101,7 +224,7 @@ body {
         }
 
         /* on prévoit un petit espace gris pour la timeline */
-        .slideshow .container:after {
+        .slideshow .container_c:after {
             position: absolute;
             bottom: 0;
             left: 0;
@@ -182,7 +305,7 @@ body {
 
         .message {
             margin-left: 5%;
-            margin-top: 10%;
+            margin-top: 7%;
             margin-right: 2%;
             width: 700px;
             text-align: justify;
