@@ -7,7 +7,6 @@ body {
 
 .home{
     .title{
-        width: 60vw;
         text-align: left;
         font-size: 32px;
         padding-top: 40px;
@@ -39,10 +38,9 @@ body {
 
     .localisation {
         background-color: rgba(96, 180, 11, 0.6);
-        display: flex;
         padding-bottom: 3%;
+        display: flex;
         .titre{
-            display: inline;
             text-align: left;
             font-size: 28px;
             margin-bottom: 20px;
@@ -56,7 +54,6 @@ body {
         .presentation {
             margin-top: 5%;
             font-size: 20px;
-            display: inline;
         }
 
         .adresse {
@@ -64,7 +61,6 @@ body {
             margin-left: 2%;
             margin-right: 2%;
             height: 315px;
-            display: inline;
         }
     }
 
@@ -270,8 +266,21 @@ body {
         }
     }
     @media only screen and (max-width: 1200px) {
-        .localisation .adresse {
-            height: 150px;
+        .localisation {
+            display: inline-block;
+            width: 100%;
+            .adresse {
+                height: 150px;
+            }
+        }
+        .home .carousel .title {
+            margin: 0 0 20px 0;
+        }
+    }
+    @media only screen and (max-width: 1000px) {
+        .social_network .adresse {
+            width: 0;
+            display: none;
         }
     }
     @media only screen and (max-width: 900px) {
