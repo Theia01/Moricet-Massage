@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\SendMailService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\Contact;
-use App\Mail\ConfirmationContact;
 
 class ContactUsController extends Controller
 {
@@ -23,21 +21,16 @@ class ContactUsController extends Controller
    {
         $this->validate($request, [
          'name' => 'required|min:2|max:30',
-         'email' => 'required|email',
+         'email' => 'required|email:filter',
          'message' => 'required|max:1000'
          ]);
 
-        try {
-            Mail::to('moricet-massage@gmail.com')
-            ->send(new Contact($request->except('_token')));
-        } catch (Exception $e) {
-            //report($e);
+         $checkMail = SendMailService::mailDemandeContact($request);
+
+         if($checkMail){
+            return redirect('contact')->with('success', 'Mail envoyé !');
+        }else{
             return redirect('contact')->with('error', 'Petit problème technique, veuillez réessayer plus tard.');
-        }  
-
-        Mail::to($request->email)
-            ->send(new ConfirmationContact($request->except('_token')));
-
-        return redirect('contact')->with('success', 'Mail envoyé !');
+        }       
    }
 }
