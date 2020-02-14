@@ -52,22 +52,16 @@
     <div class="social_network">
         <p class="title">... Et retrouvez-nous sur nos réseaux sociaux</p>
         <div class="reseaux">
-        <div class="sn">
-            <img alt="twitter" src="{{ asset('images/twitter.png') }}">
-            <p> Moricet-Massage </p>
-        </div>
-        <div class="sn">
-            <img alt="instagram" src="{{ asset('images/instagram.png') }}">
-            <p> Moricet-Massage </p>
-        </div>
-        <div class="sn">
-            <img alt="facebook" src="{{ asset('images/facebook.png') }}">
-            <p> Moricet-Massage </p>
-        </div>
-        <div class="sn">
-            <img alt="linkedin" src="{{ asset('images/linkedin.png') }}">
-            <p> Moricet-Massage </p>
-        </div>
+            @php
+                $all_networks = \App\Services\SocialNetworkService::getAllSocialNetwork();
+            @endphp
+
+            @foreach (json_decode($all_networks) as $key => $net)
+                <div class="sn">
+                    <img alt="{{$net->reseau}}" src="{{ asset("images/" . $net->reseau . ".png") }}">
+                    <p> Moricet-Massage </p>
+                </div>
+            @endforeach
         </div>
     <img class="adresse" src="{{ asset('images/produits.jpg') }}"  alt="adresse" />
     </div>
