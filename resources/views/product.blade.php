@@ -14,7 +14,7 @@
         <div class="bloc_texte">
             <p class="nom">{{ $massage['nom']}}</p>
             <p class="desc"><?= html_entity_decode ($massage['resume']) ?></p>
-            <a class="lien lien_l" href="produit/{{strtolower(str_replace(' ','-',$massage['nom'])) }}">
+            <a class="lien lien_l" href="produit/{{$massage['nom_url']}}">
             <!-- ,'url'=> -->
             <div class="button_sp">
                 <p> En savoir plus </p>
@@ -33,7 +33,7 @@
         <div class="bloc_texte">
             <p class="nom">{{ $massage['nom']}}</p>
             <p class="desc"><?= html_entity_decode ($massage['resume']) ?></p>
-            <a class="lien lien_r" style="float:left;" href="produit/{{strtolower(str_replace(' ','-',$massage['nom'])) }}">
+            <a class="lien lien_r" style="float:left;" href="produit/{{$massage['nom_url']}}">
             <!-- ,'url'=> -->
             <div class="button_sp">
                 <p> En savoir plus </p>
