@@ -7,7 +7,6 @@ body {
 
 .home{
     .title{
-        width: 60vw;
         text-align: left;
         font-size: 32px;
         padding-top: 40px;
@@ -39,16 +38,17 @@ body {
 
     .localisation {
         background-color: rgba(96, 180, 11, 0.6);
+        padding-bottom: 3%;
+        display: flex;
         .titre{
             text-align: left;
             font-size: 28px;
-            padding-top: 40px;
             margin-bottom: 20px;
         }
 
         .text {
-            margin-bottom: 0;
             padding: 5px;
+            display: inline;
         }
 
         .presentation {
@@ -61,7 +61,6 @@ body {
             margin-left: 2%;
             margin-right: 2%;
             height: 315px;
-            object-fit: cover;
         }
     }
 
@@ -130,7 +129,6 @@ body {
             text-align: left;
             font-size: 28px;
             padding-top: 40px;
-            margin-bottom: 20px;
             margin-left: 5%;
         }
 
@@ -263,18 +261,30 @@ body {
 
         .message {
             margin-left: 5%;
-            margin-top: 7%;
             margin-right: 2%;
             font-size: 20px;
         }
     }
     @media only screen and (max-width: 1200px) {
-        .adresse {
-            height: 100px;
+        .localisation {
+            display: inline-block;
+            width: 100%;
+            .adresse {
+                height: 150px;
+            }
+        }
+        .home .carousel .title {
+            margin: 0 0 20px 0;
+        }
+    }
+    @media only screen and (max-width: 1000px) {
+        .social_network .adresse {
+            width: 0;
+            display: none;
         }
     }
     @media only screen and (max-width: 900px) {
-        .video, .slideshow, .adresse {
+        .video, .slideshow {
             width: 0;
             display: none;
         }
@@ -285,6 +295,19 @@ body {
             max-width: 300px;
             min-height: 200px;
             max-height: 200px;
+        }
+        .title {
+            width: 100%;
+        }
+        .localisation {
+            display: inline-block;
+            .title {
+                width: 100%;
+            }
+            .presentation {
+                display: block;
+                padding-left: 5%;
+            }
         }
     }
     @media only screen and (max-width: 500px) {
