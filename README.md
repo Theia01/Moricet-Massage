@@ -28,6 +28,10 @@ système de page de
 contact avec email de
 confirmation.
 - Proposer un plan de site.
+- Mettre en place une base de données Eloquent (bonus)
+- Disposer d'un footer dynamique (bonus)
+- Utiliser un service similaire à DatabaseService mais récupérant les données depuis un fichier local (bonus)
+- Vérifier la validité des adresses mail entrées (bonus)
 
 ---
 
