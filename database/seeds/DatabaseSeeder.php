@@ -11,6 +11,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call([
+            MassageTableSeeder::class,
+            MassageTechniqueTableSeeder::class,
+            TarifTableSeeder::class,
+            TechniqueTableSeeder::class,
+            TechniqueTarifTableSeeder::class,
+        ]);
     }
 }
