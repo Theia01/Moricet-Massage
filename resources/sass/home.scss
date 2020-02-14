@@ -14,15 +14,6 @@ body {
         margin-bottom: 20px;
     }
 
-    .under_title{
-        font-style: italic;
-    font-size: 24px;
-    color: #FCFAED;
-    /* margin-top: -50px; */
-    padding: 0;
-    text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-    }
-
 
     .description {
         padding-top: 5%;
@@ -30,11 +21,8 @@ body {
         display: flex;
 
         .presentation {
-            margin-left: 0%;
+            margin-left: 0;
             margin-top: 4%;
-            margin-right: 2%;
-            width: 1000px;
-            text-align: justify;
             font-size: 20px;
             padding-right: 2%;
         }
@@ -54,24 +42,13 @@ body {
         display: flex;
 
         .titre{
-            width: 45vw;
             text-align: left;
             font-size: 28px;
             padding-top: 40px;
             margin-bottom: 20px;
         }
-        
-        .under_title{
-            font-style: italic;
-        font-size: 20px;
-        color: #FCFAED;
-        /* margin-top: -50px; */
-        padding: 0;
-        text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
-        }
 
         .presentation {
-           // margin-left: 2%;
             margin-top: 5%;
             font-size: 20px;
         }
@@ -82,7 +59,6 @@ body {
             margin-left: 2%;
             margin-right: 2%;
             height: 315px;
-            width: 42vw;
             object-fit: cover;
         }
     }
@@ -104,15 +80,6 @@ body {
             font-size: 32px;
             padding-top: 40px;
             margin-bottom: 20px;
-        }
-
-        .under_title{
-            font-style: italic;
-        font-size: 18px;
-        color: #FCFAED;
-        /* margin-top: -50px; */
-        padding: 0;
-        text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
         }
 
         .adresse {
@@ -155,25 +122,15 @@ body {
     .carousel {
         padding-bottom: 50px;
         background-color:  rgba(242, 216, 82, 0.6);
-        display: flex;
+        //display: flex;
         z-index: -1;
         
         .title{
-            width: 50vw;
             text-align: left;
             font-size: 28px;
             padding-top: 40px;
             margin-bottom: 20px;
             margin-left: 5%;
-        }
-
-        .under_title{
-            font-style: italic;
-        font-size: 20px;
-        color: #FCFAED;
-        /* margin-top: -50px; */
-        padding: 0;
-        text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
         }
 
         .slideshow {
@@ -307,13 +264,11 @@ body {
             margin-left: 5%;
             margin-top: 7%;
             margin-right: 2%;
-            width: 700px;
-            text-align: justify;
             font-size: 20px;
         }
     }
     @media only screen and (max-width: 900px) {
-        .video, .slideshow {
+        .video, .slideshow, .adresse {
             width: 0;
             display: none;
         }
@@ -327,6 +282,15 @@ body {
         }
     }
     @media only screen and (max-width: 500px) {
+        .social_network .reseaux, .social_network .title {
+            width: 100%;
+        }
+        .presentation {
+            padding: 5px;
+        }
+        .title {
+            padding: 5px;
+        }
         .description {
             padding-top: 15%;
         }
