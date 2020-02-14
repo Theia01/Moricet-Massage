@@ -14,7 +14,7 @@ class CreateTechniqueTable extends Migration
     public function up()
     {
         Schema::create('technique', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->autoIncrement();
             $table->string("nom");
             $table->longText("description");
             $table->string("image");

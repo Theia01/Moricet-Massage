@@ -14,7 +14,7 @@ class CreateTarifTable extends Migration
     public function up()
     {
         Schema::create('tarif', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->autoIncrement();
             $table->float('prix',6,2);
             $table->integer('duree');
         });

@@ -14,7 +14,7 @@ class CreateMassageTable extends Migration
     public function up()
     {
         Schema::create('massage', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->autoIncrement();
             $table->string("nom");
             $table->string("nom_url");
             $table->float("prix",6,2);
