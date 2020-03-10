@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string("email");
             $table->string("password");
             $table->integer("role")->nullable();
-            $table->string("avatar");
+            $table->string("avatar")->nullable();
             $table->boolean("active")->default(1);
             $table->softDeletes();
         });
