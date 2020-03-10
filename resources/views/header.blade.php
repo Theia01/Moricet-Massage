@@ -7,12 +7,12 @@
         <li class="hidden"><a href="{{ route("contact") }}">Contact</a></li>
         
         @guest
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            <li>
+                <a href="{{ route('login') }}">{{ __('Login') }}</a>
             </li>
             @if (Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                <li>
+                    <a href="{{ route('register') }}">{{ __('Register') }}</a>
                 </li>
             @endif
         @else
