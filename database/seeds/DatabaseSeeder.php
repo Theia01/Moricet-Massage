@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             TechniqueTarifTableSeeder::class,
             MassageTechniqueTableSeeder::class,
             UsersTableSeeder::class,
+            ArticlesTableSeeder::class,
         ]);
     }
 }
