@@ -14,8 +14,7 @@
 
     @include('header')
 
-    @section('content')
-    @show
+    @yield('content')
 
     @include('footer')
 
