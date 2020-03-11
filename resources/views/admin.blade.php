@@ -1,6 +1,9 @@
 @extends('general')
 
 @section('content')
+        <div>
+            <a href="creationArticle"><button>Ajouter un article</button></a>
+        </div>
 
     @foreach($article as $key =>$articles)
         <div>
