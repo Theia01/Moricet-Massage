@@ -11,8 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('home');
-Route::get('/home', 'HomeController@index');
+Route::get('/home', function () {return view('home');})->name('home');
+Route::redirect('/', '/home');
 
 Route::get('/contact', "ContactUsController@show")->name('contact');
 Route::post('/contact', "ContactUsController@send")->name('sendcontact');
