@@ -1,0 +1,36 @@
+.one_article_container{
+    width: 90%;
+    background-color: aliceblue;
+    margin-left: 5%;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+.one_article_title{
+text-align: center;
+padding: 20px;
+}
+
+.one_article_corps{
+    padding:20px;
+}
+
+.one_article_profil{
+    height: 200px;
+    /* margin-left: 30%; */
+    background-color: rebeccapurple;
+    margin-left: 5%;
+    width: 32%;
+    margin-bottom: 70px;
+    display: inline-block;
+}
+
+.one_article_comment{
+    height: 200px;
+    /* margin-left: 30%; */
+    background-color: rebeccapurple;
+    margin-left: 1%;
+    width: 57%;
+    margin-bottom: 70px;
+    display: inline-block;
+}
