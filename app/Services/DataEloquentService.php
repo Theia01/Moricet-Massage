@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use DateTime;
 
 
 class DataEloquentService {
@@ -32,7 +33,22 @@ class DataEloquentService {
 
     }
 
+static public function sendArticle(Request $request){
+        try {
+            
+            DB::table('articles')->insert(
+                ['nom' => $request->name, 'image' => $request->image, 'corps'=> $request->article, 'user'=>3, 'created_at'=> new DateTime()]
+            );
 
+        } catch (Exception $e) {
+
+            //report($e);
+            return false;
+
+        }
+
+        return true;
+    }
 
     static public function getOneMassageByName($name){
     
