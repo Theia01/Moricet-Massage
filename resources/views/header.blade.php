@@ -3,6 +3,7 @@
     <ul>
         <li><a href="{{ route("home") }}">Accueil</a></li>
         <li><a href="{{ route("product") }}">Massages</a></li>
-        <li><a href="{{ route("contact") }}">Contact</a></li>
+        <li><a href="{{ route("articles") }}">Blog</a></li>
+        <li class="hidden"><a href="{{ route("contact") }}">Contact</a></li>
     </ul>
 </div>
