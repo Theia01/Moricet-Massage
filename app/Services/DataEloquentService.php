@@ -130,5 +130,17 @@ static public function sendArticle(Request $request){
         return $art;
     }
 
+    static public function getOneArticle($id){
+        $art = Articles::select(
+            'articles.'.Articles::CORPS, 
+            'articles.'.Articles::ID, 
+            'articles.'.Articles::NOM,
+            'articles.'.Articles::IMAGE,
+            'articles.'.Articles::CREATED_AT,
+            "users.pseudo",
+            "users.pseudo")
+        ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->where("articles.id",$id)->first();
+        return $art;
+    }
     
 }
