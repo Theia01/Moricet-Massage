@@ -1,0 +1,49 @@
+.cadre{
+    background-image: url('../../public/images/miel_404.jpg');
+    background-position: bottom 0px right 0px;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+
+    .text{
+        color: black;
+        font-family: 'Poppins', sans-serif;
+        @media only screen and (min-width: 700px) {
+            padding-top: 30vh;
+            padding-left: 20vw;
+            text-align: left;
+        }
+        padding: 20px;
+        text-align: center;
+        
+
+        h1{
+            font-size: 64px;
+            font-weight: bold;
+        }
+
+        p{
+            font-size: 24px;
+            font-weight: normal;
+        }
+
+        a{
+            color: black;
+        }
+
+        .button{
+            text-transform: uppercase;
+            background-color: #F2D852;
+            padding: 10px;
+            font-weight: bold;
+            text-align: center;
+            max-width: 420px;
+            @media only screen and (max-width: 700px) {
+                margin: auto;
+            }
+
+        }
+
+    }
+}
+
