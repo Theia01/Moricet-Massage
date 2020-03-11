@@ -20,7 +20,7 @@ class CreateCommentaireTable extends Migration
             $table->text('corps');
 
             $table->foreign('user')->references('id')->on('users');
-            $table->foreign('article')->references('id')->on('article');
+            $table->foreign('article')->references('id')->on('articles');
         });
     }
 
