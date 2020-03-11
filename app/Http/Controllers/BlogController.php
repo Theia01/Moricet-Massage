@@ -15,7 +15,8 @@ class BlogController extends Controller
     public function showArticle(){
         $id = Route::current()->parameter('id');
         $art = DataEloquentService::getOneArticle($id);
-        return view('one_article', ['article'=>$art ] );
+        $comments = DataEloquentService::getCommentsFromArticle($id);
+        return view('one_article', ['article'=>$art,'commentaires'=>$comments ] );
     }
 
 }
