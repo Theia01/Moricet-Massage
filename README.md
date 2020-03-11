@@ -115,6 +115,10 @@ Puis relancez votre invite de commande et votre serveur.
 
 ### Connexion à la base de données de l'ORM
 
+Avant toute chose, modifiez le fichier `config/database.php` pour correspondre à votre configuration locale. Mettez à jour les identifiants / adresses / ports si besoin.
+
+Ensuite, il vous faut créer manuellement la base de données utilisée par l'application. Elle doit porter le nom **`laravel`**.
+
 Pour migrer la base de données :
 ```sh
 php artisan migrate
