@@ -27,3 +27,5 @@ Route::get('/produit/{name}', 'ArticleController@showProduct');
 Route::get('/articles', 'BlogController@getArticles')->name('articles');
 Route::get('/articles/{id}', 'BlogController@showArticle');
 Auth::routes();
+Route::get('/admin', 'AdminController@getArticle')->name('admin');
+Route::get('delete/{id}', 'AdminController@deleteArticle');

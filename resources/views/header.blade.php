@@ -5,7 +5,7 @@
         <li><a href="{{ route("product") }}">Massages</a></li>
         <li><a href="{{ route("articles") }}">Blog</a></li>
         <li class="hidden"><a href="{{ route("contact") }}">Contact</a></li>
-        
+
         @guest
             <li>
                 <a class="hidden hide-login" href="{{ route('login') }}"><span>{{ __('Connexion') }}</span></a>
@@ -32,6 +32,7 @@
                 </form>
             </li>
         @endguest
-        
+        <li><a href="{{ route("contact") }}">Contact</a></li>
+        <li><a href="{{ route("admin") }}">Admin</a></li>
     </ul>
 </div>

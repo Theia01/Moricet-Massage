@@ -24,13 +24,13 @@ use DateTime;
 
 
 class DataEloquentService {
-    
+
     static public function getMassages(){
         $r = DB::table('massage')->select("nom","nom_url","resume","image")->get();
         $one_less = json_decode(json_encode($r), true);;
-      
+
         return $one_less;
-        
+
 
     }
 
@@ -52,17 +52,17 @@ static public function sendArticle(Request $request){
     }
 
     static public function getOneMassageByName($name){
-    
+
     }
 
 
     static public function insertProduct(){
-    
-       
+
+
         $newPost = DatabaseService::connecttodb()
         ->getReference('produits')
         /*->push([
-            
+
             "nom" => "Massage au Miel",
             "prix" => 35,
             "resume" => "Un massage délicat à base de miel bio",
@@ -121,8 +121,8 @@ static public function sendArticle(Request $request){
 
     static public function getArticles(){
         $art = Articles::select(
-            'articles.'.Articles::CORPS, 
-            'articles.'.Articles::ID, 
+            'articles.'.Articles::CORPS,
+            'articles.'.Articles::ID,
             'articles.'.Articles::NOM,
             'articles.'.Articles::IMAGE,
             'articles.'.Articles::CREATED_AT,
@@ -155,5 +155,21 @@ static public function sendArticle(Request $request){
         return $com;
     }
 
-    
+    static public function getAllArticles(){
+        $art = Articles::select(
+            'articles.'.Articles::CORPS,
+            'articles.'.Articles::ID,
+            'articles.'.Articles::NOM,
+            'articles.'.Articles::IMAGE,
+            'articles.'.Articles::CREATED_AT,
+            "users.pseudo")
+            ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->get();
+        return $art;
+    }
+
+    static public function deleteArticle($id){
+        $art = Articles::destroy('id', $id);
+        return $art;
+    }
+
 }
