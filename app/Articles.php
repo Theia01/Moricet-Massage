@@ -9,6 +9,7 @@ class Articles extends Model
 {
     use Notifiable;
 
+    const ID = 'id';
     const NOM = 'nom';
     const IMAGE = 'image';
     const CORPS = 'corps';
@@ -17,6 +18,6 @@ class Articles extends Model
     const UPDATED_AT = 'updated_at';
 
     protected $fillable = [
-        'nom', 'image', 'corps', 'user', 'updated_at', 'created_at',
+        'id','nom', 'image', 'corps', 'user', 'updated_at', 'created_at',
     ];
 }
