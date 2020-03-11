@@ -10,7 +10,9 @@ $factory->define(Articles::class, function (Faker $faker) {
         'nom' => $faker->sentence(1),
         'image' => $faker->text,
         'corps' => $faker->text,
-        'user' => 1,
+        'user' => function() {
+        return factory(App\Users::class)->create()->id;
+        },
         'created_at' => $faker->dateTime,
         'updated_at' => $faker->dateTime,
     ];
