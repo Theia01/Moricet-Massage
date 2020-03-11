@@ -130,7 +130,7 @@ static public function sendArticle(Request $request){
         ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->paginate(6);
         return $art;
     }
-
+    
     static public function getOneArticle($id){
         $art = Articles::select(
             'articles.'.Articles::CORPS, 
