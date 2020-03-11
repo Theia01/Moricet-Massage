@@ -12,6 +12,9 @@ function formTime($time,$price){
       return $r;
 }
 
+function truncate($string, $value){
+  return substr($string,0,$value).'...';
+}
 
 
 ?>
