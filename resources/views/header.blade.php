@@ -8,11 +8,11 @@
         
         @guest
             <li>
-                <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a class="hidden hide-login" href="{{ route('login') }}"><span>{{ __('Connexion') }}</span></a>
             </li>
             @if (Route::has('register'))
                 <li>
-                    <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="hidden hide-register" href="{{ route('register') }}"><span>{{ __('Inscription') }}</span></a>
                 </li>
             @endif
         @else
