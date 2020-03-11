@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/home', function () {return view('home');})->name('home');
+Route::redirect('/', '/home');
 
 Route::get('/contact', "ContactUsController@show")->name('contact');
 Route::post('/contact', "ContactUsController@send")->name('sendcontact');
@@ -26,3 +25,5 @@ Route::get('/produits', 'ArticleController@getProducts' )->name('product');
 Route::get('/produit/{name}', 'ArticleController@showProduct');
 
 Route::get('/articles', 'BlogController@getArticles')->name('articles');
+
+Auth::routes();
