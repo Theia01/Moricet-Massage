@@ -21,3 +21,5 @@ Route::post('/contact', "ContactUsController@send")->name('sendcontact');
 Route::get('/produits', 'ArticleController@getProducts' )->name('product');
 
 Route::get('/produit/{name}', 'ArticleController@showProduct');
+
+Route::get('/articles', 'BlogController@getArticles');

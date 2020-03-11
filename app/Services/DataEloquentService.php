@@ -109,7 +109,7 @@ class DataEloquentService {
             'articles.'.Articles::NOM,
             'articles.'.Articles::IMAGE,
             'articles.'.Articles::CREATED_AT,
-            "users.pseudo")
+            "users.pseudo")->orderBy('created_at', 'DESC')
         ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->paginate(6);
         return $art;
     }
