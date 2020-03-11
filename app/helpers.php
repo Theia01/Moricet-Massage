@@ -18,3 +18,4 @@ function truncate($string, $value){
 
 
 ?>
+
