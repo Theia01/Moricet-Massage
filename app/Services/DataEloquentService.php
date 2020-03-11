@@ -10,6 +10,7 @@ use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
 use App\t_log;
 use App\User;
+use App\Articles;
 use App\CustomClasses\Produit;
 
 use App\Eloquent\Massage;
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+
 
 class DataEloquentService {
     
@@ -99,5 +101,18 @@ class DataEloquentService {
         var_dump();
         die;
     }
+
+    static public function getArticles(){
+        $art = Articles::select(
+            'articles.'.Articles::CORPS, 
+            'articles.'.Articles::ID, 
+            'articles.'.Articles::NOM,
+            'articles.'.Articles::IMAGE,
+            'articles.'.Articles::CREATED_AT,
+            "users.pseudo")
+        ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->paginate(6);
+        return $art;
+    }
+
     
 }
