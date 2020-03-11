@@ -22,7 +22,7 @@ $factory->define(Users::class, function (Faker $faker) {
         'created_at' => $faker->dateTime,
         'updated_at' => $faker->dateTime,
         'password' => $faker->password,
-        'pseudo' => $faker->sentence(1),
+        'name' => $faker->sentence(1),
         'role' => $faker->numberBetween(0, 1),
         'avatar' => $faker->text,
         'active' => $faker->boolean,
