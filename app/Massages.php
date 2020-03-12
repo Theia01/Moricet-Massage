@@ -24,4 +24,9 @@ class Massages extends Model
     protected $fillable = [
         'id', 'nom', 'prix', 'resume', 'description', 'image', 'produits', 'bienfaits', 'allergies', 'created_at', 'updated_at',
     ];
+
+    public function massages()
+    {
+        return $this->hasMany(Techniques::class, 'massages_id');
+    }
 }
