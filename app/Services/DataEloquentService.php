@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use DateTime;
+use Auth;
 
 
 class DataEloquentService {
@@ -36,9 +37,8 @@ class DataEloquentService {
 
 static public function sendArticle(Request $request){
         try {
-            
             DB::table('articles')->insert(
-                ['nom' => $request->name, 'image' => $request->image, 'corps'=> $request->article, 'user'=>3, 'created_at'=> new DateTime()]
+                ['nom' => $request->name, 'image' => $request->image, 'corps'=> $request->article, 'user'=> Auth::user()->id, 'created_at'=> new DateTime()]
             );
 
         } catch (Exception $e) {
