@@ -13,8 +13,12 @@ use File;
 
 class FolderService {
 
-    static public function getAllMassageImage(){
+    static public function getAllBlogImage(){
         return FolderService::findInFolder("/"."images/"."article");
+    }
+
+    static public function getAllAvatarImage(){
+        return FolderService::findInFolder("/"."images/"."avatar");
     }
 
     static public function findInFolder($path){
