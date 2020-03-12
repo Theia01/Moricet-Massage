@@ -26,6 +26,10 @@ Route::get('/produit/{id}', 'ArticleController@showProduct');
 
 Route::get('/articles', 'BlogController@getArticles')->name('articles');
 Route::get('/articles/{id}', 'BlogController@showArticle');
+
+Route::get('/profil', 'ProfilController@show')->middleware('auth')->name('profil');
+Route::post('/profil', 'ProfilController@update')->middleware('auth')->name('updateprofil');
+
 Auth::routes();
 Route::get('/admin', 'AdminController@getArticle')->name('admin');
 Route::get('delete/{id}', 'AdminController@deleteArticle');

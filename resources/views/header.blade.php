@@ -19,9 +19,12 @@
             {{-- Admin --}}
             @if(Auth::user()->role == 1)
                 <li>
-                    <a class="hidden hide-admin" href="{{ route("admin") }}"><span>Admin</span></a>
+                    <a class="hidden hide-admin" href="{{ route('admin') }}"><span>Admin</span></a>
                 </li>
             @endif
+            <li>
+                <a href="{{ route('profil') }}"><span>Profil</span></a>
+            </li>
             <li>
                 <a href="{{ route('logout') }}"
                     onclick="event.preventDefault();
