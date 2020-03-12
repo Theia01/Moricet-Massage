@@ -19,17 +19,17 @@ class CreationArticleController extends Controller
    public function send(Request $request)
    {
         $this->validate($request, [
-         'name' => 'required|min:2|max:30',
+         'name' => 'required|min:2|max:255',
          'image' => 'required|max:255',
-         'article' => 'required|max:10000'
+         'article' => 'required|max:100000'
          ]);
 
          $sendArticle = DataEloquentService::sendArticle($request);
 
          if($sendArticle){
-            return redirect('contact')->with('success', 'Article posté !');
+            return redirect('creationArticle')->with('success', 'Article posté !');
         }else{
-            return redirect('contact')->with('error', 'Petit problème technique, veuillez réessayer plus tard.');
+            return redirect('creationArticle')->with('error', 'Petit problème technique, veuillez réessayer plus tard.');
         }       
    }
 }
