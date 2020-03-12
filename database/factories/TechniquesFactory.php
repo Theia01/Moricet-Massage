@@ -15,5 +15,8 @@ $factory->define(Techniques::class, function (Faker $faker) {
         'duree' => $faker->numberBetween(10, 200),
         'created_at' => $faker->dateTime,
         'updated_at' => $faker->dateTime,
+        'massages_id' => function() {
+            return factory(App\Massages::class)->create()->id;
+            },
     ];
 });

@@ -12,8 +12,8 @@ class TechniquesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Techniques::class, 9)->create()->each(function ($techniques) {
-            $techniques->massages()->save(factory(App\Massages::class)->make());
-        });
+        //factory(App\Techniques::class, 9)->create()->each(function ($techniques) {
+        //    $techniques->massages()->save(factory(App\Massages::class)->make());
+        //});
     }
 }

@@ -15,7 +15,6 @@ class CreateMassagesTable extends Migration
     {
         Schema::create('massages', function (Blueprint $table) {
             $table->bigIncrements('id')->autoIncrement();
-            $table->unsignedBigInteger('id_technique');
             $table->string('nom');
             $table->float('prix',6,2);
             $table->longText('resume');
@@ -25,8 +24,6 @@ class CreateMassagesTable extends Migration
             $table->longText('bienfaits');
             $table->longText('allergies');
             $table->timestamps();
-
-            $table->foreign('id_technique')->references('id')->on('techniques');
 
         });
     }

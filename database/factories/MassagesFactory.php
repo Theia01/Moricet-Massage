@@ -7,7 +7,6 @@ use Faker\Generator as Faker;
 
 $factory->define(Massages::class, function (Faker $faker) {
     return [
-        'id_technique' => factory('App\Techniques')->create()->id,
         'nom' => $faker->sentence(1),
         'prix' => $faker->numberBetween(10, 30),
         'resume' => $faker->text,
