@@ -1,6 +1,7 @@
 <?php
 namespace App\Services;
 
+use App\Techniques;
 use Kreait\Firebase;
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
@@ -23,19 +24,38 @@ use DateTime;
 
 
 class DataEloquentService {
-    
+
     static public function getMassages(){
         $r = DB::table('massage')->select("nom","nom_url","resume","image")->get();
-        $one_less = json_decode(json_encode($r), true);;
-      
+        $one_less = json_decode(json_encode($r), true);
+
         return $one_less;
-        
+
 
     }
 
+    static public function getOneMassageByName($name){
+        $massage = DB::table('massage')->select("nom","nom_url", "prix", "resume","image", "description")->where('nom_url', $name);
+        $get = json_decode(json_encode($massage), true);
+
+
+        return $get;
+
+    }
+
+    static public function getTechnique($name){
+        $technique = Techniques::select("id", "nom", "description", "image", "icon", "tarif", "duree");
+        $get = json_decode(json_encode($technique), true);
+
+
+        return $get;
+
+    }
+
+
 static public function sendArticle(Request $request){
         try {
-            
+
             DB::table('articles')->insert(
                 ['nom' => $request->name, 'image' => $request->image, 'corps'=> $request->article, 'user'=>3, 'created_at'=> new DateTime()]
             );
@@ -50,18 +70,14 @@ static public function sendArticle(Request $request){
         return true;
     }
 
-    static public function getOneMassageByName($name){
-    
-    }
-
 
     static public function insertProduct(){
-    
-       
+
+
         $newPost = DatabaseService::connecttodb()
         ->getReference('produits')
         /*->push([
-            
+
             "nom" => "Massage au Miel",
             "prix" => 35,
             "resume" => "Un massage délicat à base de miel bio",
@@ -120,8 +136,8 @@ static public function sendArticle(Request $request){
 
     static public function getArticles(){
         $art = Articles::select(
-            'articles.'.Articles::CORPS, 
-            'articles.'.Articles::ID, 
+            'articles.'.Articles::CORPS,
+            'articles.'.Articles::ID,
             'articles.'.Articles::NOM,
             'articles.'.Articles::IMAGE,
             'articles.'.Articles::CREATED_AT,
@@ -130,5 +146,5 @@ static public function sendArticle(Request $request){
         return $art;
     }
 
-    
+
 }
