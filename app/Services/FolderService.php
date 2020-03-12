@@ -21,6 +21,18 @@ class FolderService {
         return FolderService::findInFolder("/"."images/"."avatar");
     }
 
+    static public function getAllTechniqueImage(){
+        return FolderService::findInFolder("/"."images/"."technique_image");
+    }
+
+    static public function getAllTechniqueIcon(){
+        return FolderService::findInFolder("/"."images/"."technique_icon");
+    }
+
+    static public function getAllMassageImage(){
+        return FolderService::findInFolder("/"."images/"."massage_image");
+    }
+
     static public function findInFolder($path){
         $all_files = [];
         $scan_path =  public_path().$path;
@@ -31,7 +43,7 @@ class FolderService {
             }
         }
         return $all_files;
-    
+
     }
 
 }
