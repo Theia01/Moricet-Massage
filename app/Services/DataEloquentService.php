@@ -126,7 +126,7 @@ static public function sendArticle(Request $request){
             'articles.'.Articles::NOM,
             'articles.'.Articles::IMAGE,
             'articles.'.Articles::CREATED_AT,
-            "users.".Users::PSEUDO)->orderBy('created_at', 'DESC')
+            "users.".Users::NAME)->orderBy('created_at', 'DESC')
         ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->paginate(6);
         return $art;
     }
@@ -138,7 +138,7 @@ static public function sendArticle(Request $request){
             'articles.'.Articles::NOM,
             'articles.'.Articles::IMAGE,
             'articles.'.Articles::CREATED_AT,
-            "users.".Users::PSEUDO,
+            "users.".Users::NAME,
             "users.".Users::AVATAR)
         ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->where("articles.id",$id)->first();
         return $art;
@@ -148,7 +148,7 @@ static public function sendArticle(Request $request){
         $com = Commentaires::select(
             'commentaires.'.Commentaires::CORPS,
             'commentaires.'.Commentaires::CREATED_AT,
-            "users.".Users::PSEUDO,
+            "users.".Users::NAME,
             "users.".Users::AVATAR
         )->leftJoin('users', 'users.id', '=', 'commentaires.'.Commentaires::USER)->where("commentaires.".Commentaires::ARTICLE,$id)->get();
         ;
@@ -162,7 +162,7 @@ static public function sendArticle(Request $request){
             'articles.'.Articles::NOM,
             'articles.'.Articles::IMAGE,
             'articles.'.Articles::CREATED_AT,
-            "users.pseudo")
+            "users.name")
             ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->get();
         return $art;
     }

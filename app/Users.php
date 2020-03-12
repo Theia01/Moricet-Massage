@@ -9,7 +9,7 @@ class Users extends Authenticatable
 {
     use Notifiable;
 
-    const PSEUDO = 'name';
+    const NAME = 'name';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
     const DELETED_AT = 'deleted_at';

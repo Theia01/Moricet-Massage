@@ -8,7 +8,7 @@
     @foreach($article as $key =>$articles)
         <div class="article">
             <p class="banane"><span class="article-i">Titre:</span> {{ $articles->nom }}</p>
-            <p class="banane"><span class="article-i">Auteur:</span> {{ $articles->pseudo }}</p>
+            <p class="banane"><span class="article-i">Auteur:</span> {{ $articles->name }}</p>
             <p class="banane"><span class="article-i">Date:</span> {{ $articles->created_at }}</p>
             <div class="article-button">
                 <a href="articles/{{ $articles->id }}">
