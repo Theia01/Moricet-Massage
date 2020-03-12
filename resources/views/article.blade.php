@@ -9,10 +9,10 @@
         <div class="box">
             <p class="title"> {{ $article->nom }}</p>
             <div class="image-container">
-                <img class="image" alt="L'image définie par l'auteur est invalide." src="{{$article->image}}"/>
+                <img class="image" alt="L'image définie par l'auteur est invalide." src="{{asset($article->image) }}"/>
             </div>
             <p class="content"> {{ truncate($article->corps,50) }} </p>
-            <p class="info"> Created the {{ date('d/m/Y', strtotime($article->created_at))}} by <span class="author">{{ $article->pseudo }}</span>.</p>
+            <p class="info"> Created the {{ date('d/m/Y', strtotime($article->created_at))}} by <span class="author">{{ $article->name }}</span>.</p>
         </div>
     </a>
 @endforeach

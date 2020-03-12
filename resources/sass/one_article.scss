@@ -1,0 +1,76 @@
+.one_article_container{
+    width: 90%;
+    background-color: aliceblue;
+    margin-left: 5%;
+    margin-top: 70px;
+    margin-bottom: 10px;
+}
+
+.one_article_title{
+text-align: center;
+padding: 20px;
+}
+
+.one_article_corps{
+    padding:20px;
+}
+
+.one_article_profil{
+    height: 200px;
+    /* margin-left: 30%; */
+    background-color: rebeccapurple;
+    margin-left: 5%;
+    width: 32%;
+    margin-bottom: 70px;
+    display: inline-block;
+    
+    vertical-align: top;
+}
+
+.one_article_comment{
+    height: auto;
+    /* margin-left: 30%; */
+    background-color: rebeccapurple;
+    margin-left: 1%;
+    width: 57%;
+    margin-bottom: 70px;
+    display: inline-block;
+}
+
+.comment{
+    display: table;
+}
+
+.comment>img{
+    height: 80px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    vertical-align: bottom;
+    border-radius: 100px;
+    margin-left: 20px;
+}
+
+.talkbubble {
+    width: 80%;
+    height: auto;
+    background: white;
+    position: relative;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    display: inline-block;
+    padding: 10px;
+  }
+
+  .talkbubble:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 26px;
+    width: 0;
+    height: 0;
+    border-top: 13px solid transparent;
+    border-right: 26px solid white;
+    border-bottom: 13px solid transparent;
+  }

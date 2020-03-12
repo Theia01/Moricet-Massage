@@ -4,7 +4,7 @@
 
  use App\Users;
  use Faker\Generator as Faker;
-
+ use App\Services\FolderService;
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -24,7 +24,9 @@ $factory->define(Users::class, function (Faker $faker) {
         'password' => $faker->password,
         'name' => $faker->sentence(1),
         'role' => $faker->numberBetween(0, 1),
-        'avatar' => $faker->sentence(1),
+        'avatar' => $faker->randomElement(
+            FolderService::getAllAvatarImage()
+        ),
         'active' => $faker->boolean,
         'deleted_at' => null,
     ];
