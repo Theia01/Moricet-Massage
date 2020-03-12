@@ -15,10 +15,10 @@ class ArticleController extends Controller
     }
 
     public function showProduct(){
-        $name = Route::current()->parameter('name');
-        $massage = DataEloquentService::getOneMassageByName($name );
-        $technique = DataEloquentService::getTechnique($name );
-        return view('one_product', ['technique'=>$technique, 'massage'=>$massage ] );
+        $id = Route::current()->parameter('id');
+        $massage = DataEloquentService::getOneMassageByName($id);
+        $technique = DataEloquentService::getTechnique($id);
+        return view('one_product', ['technique'=>$technique, 'massage'=>$massage] );
     }
 
 }

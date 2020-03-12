@@ -1,6 +1,7 @@
 <?php
 namespace App\Services;
 
+use App\Massages;
 use App\Techniques;
 use Kreait\Firebase;
 use Kreait\Firebase\Factory;
@@ -26,29 +27,23 @@ use DateTime;
 class DataEloquentService {
 
     static public function getMassages(){
-        $r = DB::table('massage')->select("nom","nom_url","resume","image")->get();
-        $one_less = json_decode(json_encode($r), true);
+        $massages = Massages::select(Massages::ID, Massages::NOM, Massages::RESUME, Massages::IMAGE)->get();
 
-        return $one_less;
-
+        return $massages;
 
     }
 
-    static public function getOneMassageByName($name){
-        $massage = DB::table('massage')->select("nom","nom_url", "prix", "resume","image", "description")->where('nom_url', $name);
-        $get = json_decode(json_encode($massage), true);
+    static public function getOneMassageByName($id){
+        $massage = Massages::select(Massages::NOM, Massages::DESCRIPTION, Massages::PRODUITS, Massages::ALLERGIES, Massages::BIENFAITS, Massages::PRIX)->where(Massages::ID, $id)->get();
 
-
-        return $get;
+        return $massage;
 
     }
 
-    static public function getTechnique($name){
-        $technique = Techniques::select("id", "nom", "description", "image", "icon", "tarif", "duree");
-        $get = json_decode(json_encode($technique), true);
+    static public function getTechnique($id){
+        $technique = Techniques::select(Techniques::DESCRIPTION, Techniques::NOM, Techniques::TARIF, Techniques::DUREE, Techniques::ICON, Techniques::IMAGE)->where(Techniques::ID_MASSAGE, $id)->get();
 
-
-        return $get;
+        return $technique;
 
     }
 
