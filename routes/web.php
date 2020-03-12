@@ -22,7 +22,7 @@ Route::post('/creationArticle', "creationArticleController@send")->name('postAdd
 
 Route::get('/produits', 'ArticleController@getProducts' )->name('product');
 
-Route::get('/produit/{name}', 'ArticleController@showProduct');
+Route::get('/produit/{id}', 'ArticleController@showProduct');
 
 Route::get('/articles', 'BlogController@getArticles')->name('articles');
 Route::get('/articles/{id}', 'BlogController@showArticle');

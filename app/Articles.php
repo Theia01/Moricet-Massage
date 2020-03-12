@@ -20,4 +20,9 @@ class Articles extends Model
     protected $fillable = [
         'id','nom', 'image', 'corps', 'user', 'updated_at', 'created_at',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany(Commentaires::class, 'article');
+    }
 }

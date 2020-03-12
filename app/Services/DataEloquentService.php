@@ -1,6 +1,8 @@
 <?php
 namespace App\Services;
 
+use App\Massages;
+use App\Techniques;
 use Kreait\Firebase;
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
@@ -21,24 +23,36 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use DateTime;
+use Auth;
 
 
 class DataEloquentService {
 
     static public function getMassages(){
-        $r = DB::table('massage')->select("nom","nom_url","resume","image")->get();
-        $one_less = json_decode(json_encode($r), true);;
+        $massages = Massages::select(Massages::ID, Massages::NOM, Massages::RESUME, Massages::IMAGE)->get();
 
-        return $one_less;
+        return $massages;
 
+    }
+
+    static public function getOneMassageByName($id){
+        $massage = Massages::select(Massages::NOM, Massages::DESCRIPTION, Massages::PRODUITS, Massages::ALLERGIES, Massages::BIENFAITS, Massages::PRIX)->where(Massages::ID, $id)->get();
+
+        return $massage;
+
+    }
+
+    static public function getTechnique($id){
+        $technique = Techniques::select(Techniques::DESCRIPTION, Techniques::NOM, Techniques::TARIF, Techniques::DUREE, Techniques::ICON, Techniques::IMAGE)->where(Techniques::ID_MASSAGE, $id)->get();
+
+        return $technique;
 
     }
 
 static public function sendArticle(Request $request){
         try {
-            
             DB::table('articles')->insert(
-                ['nom' => $request->name, 'image' => $request->image, 'corps'=> $request->article, 'user'=>3, 'created_at'=> new DateTime()]
+                ['nom' => $request->name, 'image' => $request->image, 'corps'=> $request->article, 'user'=> Auth::user()->id, 'created_at'=> new DateTime()]
             );
 
         } catch (Exception $e) {
@@ -50,11 +64,6 @@ static public function sendArticle(Request $request){
 
         return true;
     }
-
-    static public function getOneMassageByName($name){
-
-    }
-
 
     static public function insertProduct(){
 
@@ -130,11 +139,11 @@ static public function sendArticle(Request $request){
         ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->paginate(6);
         return $art;
     }
-    
+
     static public function getOneArticle($id){
         $art = Articles::select(
-            'articles.'.Articles::CORPS, 
-            'articles.'.Articles::ID, 
+            'articles.'.Articles::CORPS,
+            'articles.'.Articles::ID,
             'articles.'.Articles::NOM,
             'articles.'.Articles::IMAGE,
             'articles.'.Articles::CREATED_AT,
@@ -143,7 +152,7 @@ static public function sendArticle(Request $request){
         ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->where("articles.id",$id)->first();
         return $art;
     }
-    
+
     static public function getCommentsFromArticle($id){
         $com = Commentaires::select(
             'commentaires.'.Commentaires::CORPS,
