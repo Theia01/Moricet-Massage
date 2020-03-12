@@ -9,8 +9,9 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
 use App\t_log;
-use App\User;
+use App\Users;
 use App\Articles;
+use App\Commentaires;
 use App\CustomClasses\Produit;
 
 use App\Eloquent\Massage;
@@ -125,9 +126,33 @@ static public function sendArticle(Request $request){
             'articles.'.Articles::NOM,
             'articles.'.Articles::IMAGE,
             'articles.'.Articles::CREATED_AT,
-            "users.pseudo")->orderBy('created_at', 'DESC')
+            "users.".Users::PSEUDO)->orderBy('created_at', 'DESC')
         ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->paginate(6);
         return $art;
+    }
+
+    static public function getOneArticle($id){
+        $art = Articles::select(
+            'articles.'.Articles::CORPS, 
+            'articles.'.Articles::ID, 
+            'articles.'.Articles::NOM,
+            'articles.'.Articles::IMAGE,
+            'articles.'.Articles::CREATED_AT,
+            "users.".Users::PSEUDO,
+            "users.".Users::AVATAR)
+        ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->where("articles.id",$id)->first();
+        return $art;
+    }
+    
+    static public function getCommentsFromArticle($id){
+        $com = Commentaires::select(
+            'commentaires.'.Commentaires::CORPS,
+            'commentaires.'.Commentaires::CREATED_AT,
+            "users.".Users::PSEUDO,
+            "users.".Users::AVATAR
+        )->leftJoin('users', 'users.id', '=', 'commentaires.'.Commentaires::USER)->where("commentaires.".Commentaires::ARTICLE,$id)->get();
+        ;
+        return $com;
     }
 
     

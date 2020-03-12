@@ -25,5 +25,5 @@ Route::get('/produits', 'ArticleController@getProducts' )->name('product');
 Route::get('/produit/{name}', 'ArticleController@showProduct');
 
 Route::get('/articles', 'BlogController@getArticles')->name('articles');
-
+Route::get('/articles/{id}', 'BlogController@showArticle');
 Auth::routes();

@@ -9,7 +9,7 @@ class Users extends Authenticatable
 {
     use Notifiable;
 
-    const PSEUDO = 'pseudo';
+    const PSEUDO = 'name';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
     const DELETED_AT = 'deleted_at';
@@ -20,6 +20,6 @@ class Users extends Authenticatable
     const ROLE = 'role';
 
     protected $fillable = [
-        'pseudo', 'email', 'password', 'created_at', 'updated_at', 'deleted_at', 'active', 'role', 'avatar',
+        'name', 'email', 'password', 'created_at', 'updated_at', 'deleted_at', 'active', 'role', 'avatar',
     ];
 }
