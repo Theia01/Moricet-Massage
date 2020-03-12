@@ -24,7 +24,6 @@ class CreateMassagesTable extends Migration
             $table->longText('bienfaits');
             $table->longText('allergies');
             $table->timestamps();
-
         });
     }
 
