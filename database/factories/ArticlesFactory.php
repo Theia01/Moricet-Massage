@@ -3,14 +3,14 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Articles;
+use App\Services\FolderService;
 use Faker\Generator as Faker;
 
 $factory->define(Articles::class, function (Faker $faker) {
     return [
         'nom' => $faker->sentence(1),
         'image' =>  $faker->randomElement(
-            ['/images/article/massage-therapy.jpg',
-            '/images/article/kiwi.jpg']
+            FolderService::getAllMassageImage()
         ),
         'corps' => $faker->text,
         'user' => function() {
