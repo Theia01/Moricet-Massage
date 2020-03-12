@@ -18,11 +18,10 @@ class Massages extends Model
     const PRODUITS = 'produits';
     const BIENFAITS = 'bienfaits';
     const ALLERGIES = 'allergies';
-    const ID_TECHNIQUE = 'id_technique';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
     protected $fillable = [
-        'id', 'nom', 'prix', 'resume', 'description', 'image', 'produits', 'bienfaits', 'allergies', 'id_technique', 'created_at', 'updated_at',
+        'id', 'nom', 'prix', 'resume', 'description', 'image', 'produits', 'bienfaits', 'allergies', 'created_at', 'updated_at',
     ];
 }

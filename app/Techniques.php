@@ -18,9 +18,10 @@ class Techniques extends Model
     const DUREE = 'duree';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+    const ID_MASSAGE = 'id_massage';
 
     protected $fillable = [
-        'id', 'nom', 'description', 'image', 'icon', 'tarif', 'duree', 'created_at', 'updated_at',
+        'id', 'nom', 'description', 'image', 'icon', 'tarif', 'duree', 'created_at', 'updated_at','id_massage'
     ];
 
     public function massages()
