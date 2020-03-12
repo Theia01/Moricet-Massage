@@ -70,7 +70,7 @@
             margin-top: 6px;
         }
 
-        .hide-login span, .hide-register span {
+        .hide-login span, .hide-register span, .hide-admin span {
             display: none;
             width: 0;
         }
@@ -123,6 +123,33 @@
                 background-color: transparent;
                 border: 2px solid rgba(96, 180, 11, 0.6);
                 color: rgba(96, 180, 11, 0.6);
+            }
+        }
+
+        .hide-admin:after {
+            text-align: center;
+            vertical-align: middle;
+            content: 'A';
+            line-height: 0;
+            font-size: 36px;
+        }
+
+        .hide-admin {
+            text-align: center;
+            vertical-align: middle;
+            height: 40px;
+            width: 40px;
+            background-color: red;
+            border: 2px solid red;
+            color: white;
+            border-radius: 5px;
+            float: right;
+            margin-right: 0;
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid red;
+                color: red;
             }
         }
     }

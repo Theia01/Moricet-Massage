@@ -32,7 +32,8 @@
                 </form>
             </li>
         @endguest
-        <li><a href="{{ route("contact") }}">Contact</a></li>
-        <li><a href="{{ route("admin") }}">Admin</a></li>
+        <li>
+            <a class="hidden hide-admin" href="{{ route("admin") }}"><span>Admin</span></a>
+        </li>
     </ul>
 </div>

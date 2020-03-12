@@ -1,13 +1,23 @@
 @extends('general')
 
 @section('content')
-        <div>
+        <div class="create_article">
             <a href="creationArticle"><button>Ajouter un article</button></a>
         </div>
 
     @foreach($article as $key =>$articles)
-        <div>
-            <p>Nom de l'article: {{ $articles->nom }}&nbsp;&nbsp;&nbsp; Pseudo: {{ $articles->pseudo }}&nbsp;&nbsp;&nbsp; Date de création de l'article: {{ $articles->created_at }} &nbsp;&nbsp;&nbsp;<a href="delete/{{ $articles->id }}"><button class="btn btn-danger">Delete</button></a></p>
+        <div class="article">
+            <p class="banane"><span class="article-i">Titre:</span> {{ $articles->nom }}</p>
+            <p class="banane"><span class="article-i">Auteur:</span> {{ $articles->pseudo }}</p>
+            <p class="banane"><span class="article-i">Date:</span> {{ $articles->created_at }}</p>
+            <div class="article-button">
+                <a href="articles/{{ $articles->id }}">
+                    <button class="view">Voir</button>
+                </a>
+                <a href="delete/{{ $articles->id }}">
+                    <button class="delete">Supprimer</button>
+                </a>
+            </div>
         </div>
     @endforeach
 
