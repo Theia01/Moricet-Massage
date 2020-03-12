@@ -18,7 +18,9 @@
         @else
             {{-- Admin --}}
             @if(Auth::user()->role == 1)
-                <li><a href="">Admin</a></li>
+                <li>
+                    <a class="hidden hide-admin" href="{{ route("admin") }}"><span>Admin</span></a>
+                </li>
             @endif
             <li>
                 <a href="{{ route('logout') }}"
@@ -32,8 +34,5 @@
                 </form>
             </li>
         @endguest
-        <li>
-            <a class="hidden hide-admin" href="{{ route("admin") }}"><span>Admin</span></a>
-        </li>
     </ul>
 </div>
