@@ -18,10 +18,17 @@ class Techniques extends Model
     const DUREE = 'duree';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+<<<<<<< HEAD
     const ID_MASSAGE = 'massages_id';
 
     protected $fillable = [
         'id', 'nom', 'description', 'image', 'icon', 'tarif', 'duree', 'created_at', 'updated_at','massages_id'
+=======
+    const ID_MASSAGE = 'id_massage';
+
+    protected $fillable = [
+        'id', 'nom', 'description', 'image', 'icon', 'tarif', 'duree', 'created_at', 'updated_at','id_massage'
+>>>>>>> Changement de FK
     ];
     
 }
