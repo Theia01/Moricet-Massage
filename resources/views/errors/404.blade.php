@@ -8,7 +8,7 @@
     <title>Moricet Massage</title>
 </head>
 <body>
-    <div class="cadre">
+    <div class="cadre" style="background-image: url({{asset('/images/miel_404.jpg')}});">
         <div class="text">
             <h1>Error 404</h1>
             <p>Il semblerait que vous soyez perdu !</p>
