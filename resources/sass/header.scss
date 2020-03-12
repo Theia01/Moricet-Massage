@@ -57,6 +57,76 @@
         margin-top: 6px;
     }
 
+    @media only screen and (max-width: 1000px) {
+        ul {
+            margin-right: 0;
+            list-style: none;
+            text-align: right;
+        }
+
+        li {
+            margin: 0 10px;
+            margin-top: 6px;
+        }
+
+        .hide-login span, .hide-register span {
+            display: none;
+            width: 0;
+        }
+
+        .hide-login:after {
+            text-align: center;
+            vertical-align: middle;
+            content: '⇥';
+            line-height: 0;
+            font-size: 36px;
+        }
+
+        .hide-login {
+            height: 40px;
+            width: 40px;
+            background-color: rgba(242, 216, 82, 0.6);
+            border: 2px solid rgba(242, 216, 82, 0.6);
+            color: white;
+            border-radius: 5px;
+            float: right;
+            margin: 0;
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid rgba(242, 216, 82, 0.6);
+                color: rgba(242, 216, 82, 0.6);
+            }
+        }
+
+        .hide-register:after {
+            text-align: center;
+            vertical-align: middle;
+            content: '+';
+            line-height: 0;
+            font-size: 36px;
+        }
+
+        .hide-register {
+            text-align: center;
+            vertical-align: middle;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(96, 180, 11, 0.6);
+            border: 2px solid rgba(96, 180, 11, 0.6);
+            color: white;
+            border-radius: 5px;
+            float: right;
+            margin-right: 0;
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid rgba(96, 180, 11, 0.6);
+                color: rgba(96, 180, 11, 0.6);
+            }
+        }
+    }
+
     @media only screen and (max-width: 700px) {
         a {
             font-weight: 300;
