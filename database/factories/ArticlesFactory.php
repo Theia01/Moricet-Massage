@@ -10,7 +10,7 @@ $factory->define(Articles::class, function (Faker $faker) {
     return [
         'nom' => $faker->sentence(1),
         'image' =>  $faker->randomElement(
-            FolderService::getAllMassageImage()
+            FolderService::getAllBlogImage()
         ),
         'corps' => $faker->text,
         'user' => function() {
