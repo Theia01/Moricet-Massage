@@ -37,7 +37,7 @@ confirmation.
 
 ## Plan du site
 
-![Sitemap](public/images/sitemap.png)
+![Sitemap](public/images/sitemap.jpg)
 
 ---
 
