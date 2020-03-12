@@ -8,7 +8,10 @@ use Faker\Generator as Faker;
 $factory->define(Articles::class, function (Faker $faker) {
     return [
         'nom' => $faker->sentence(1),
-        'image' => $faker->text,
+        'image' =>  $faker->randomElement(
+            ['/images/article/massage-therapy.jpg',
+            '/images/article/kiwi.jpg']
+        ),
         'corps' => $faker->text,
         'user' => function() {
         return factory(App\Users::class)->create()->id;
