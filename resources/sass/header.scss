@@ -76,14 +76,14 @@
         }
 
         .hide-login:after {
-            text-align: center;
             vertical-align: middle;
-            content: '⇥';
+            content: '↩';
             line-height: 0;
-            font-size: 36px;
+            font-size: 28px;
         }
 
         .hide-login {
+            text-align: center;
             height: 40px;
             width: 40px;
             background-color: rgba(242, 216, 82, 0.6);
@@ -101,7 +101,6 @@
         }
 
         .hide-register:after {
-            text-align: center;
             vertical-align: middle;
             content: '+';
             line-height: 0;

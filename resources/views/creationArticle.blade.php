@@ -36,7 +36,7 @@
             <span class="text-danger">{{ $errors->first('article') }}</span>
         </div>
         <div class="form-group">
-            <button class="btn btn-success">Envoyer votre article</button>
+            <button class="btn btn-success">Publiez votre article</button>
         </div>
     {!! Form::close() !!}
 
