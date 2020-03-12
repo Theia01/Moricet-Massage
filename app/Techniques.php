@@ -5,24 +5,23 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 
-class Articles extends Model
+class Techniques extends Model
 {
     use Notifiable;
 
     const ID = 'id';
     const NOM = 'nom';
+    const DESCRIPTION = 'description';
     const IMAGE = 'image';
-    const CORPS = 'corps';
-    const USER = 'user';
+    const ICON = 'icon';
+    const TARIF = 'tarif';
+    const DUREE = 'duree';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
+    const ID_MASSAGE = 'massages_id';
 
     protected $fillable = [
-        'id','nom', 'image', 'corps', 'user', 'updated_at', 'created_at',
+        'id', 'nom', 'description', 'image', 'icon', 'tarif', 'duree', 'created_at', 'updated_at','massages_id'
     ];
 
-    public function comments()
-    {
-        return $this->hasMany(Commentaires::class, 'article');
-    }
 }

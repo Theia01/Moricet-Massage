@@ -6,7 +6,7 @@ function formTime($time,$price){
       } else if (($time%60)==0 ) {
         $r =  (floor( $time/60))."h: ".$price."€" ;
       } else {
-        $r =  (floor( $time/60))."h: ".($time%60).":".$price."€" ;
+        $r =  (floor( $time/60))."h".($time%60).": ".$price."€" ;
       }
 
       return $r;
