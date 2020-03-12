@@ -175,8 +175,10 @@ static public function sendArticle(Request $request){
     static public function updateUser($id, $name, $email){
         try {
             
-            DB::table('users')->update(['name' => $name]);;
-
+            DB::table('users')
+                ->where('id', $id)
+                ->update(['name' => $name, 'email' => $email]);
+                
         } catch (Exception $e) {
 
             //report($e);
