@@ -65,11 +65,6 @@ static public function sendArticle(Request $request){
         return true;
     }
 
-    static public function getOneMassageByName($name){
-
-    }
-
-
     static public function insertProduct(){
 
 
