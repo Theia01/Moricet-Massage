@@ -5,7 +5,7 @@
         <li><a href="{{ route("product") }}">Massages</a></li>
         <li><a href="{{ route("articles") }}">Blog</a></li>
         <li class="hidden"><a href="{{ route("contact") }}">Contact</a></li>
-        
+
         @guest
             <li>
                 <a class="hidden hide-login" href="{{ route('login') }}"><span>{{ __('Connexion') }}</span></a>
@@ -18,7 +18,9 @@
         @else
             {{-- Admin --}}
             @if(Auth::user()->role == 1)
-                <li><a href="">Admin</a></li>
+                <li>
+                    <a class="hidden hide-admin" href="{{ route("admin") }}"><span>Admin</span></a>
+                </li>
             @endif
             <li>
                 <a href="{{ route('logout') }}"
@@ -32,6 +34,5 @@
                 </form>
             </li>
         @endguest
-        
     </ul>
 </div>

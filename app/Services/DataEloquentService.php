@@ -24,13 +24,13 @@ use DateTime;
 
 
 class DataEloquentService {
-    
+
     static public function getMassages(){
         $r = DB::table('massage')->select("nom","nom_url","resume","image")->get();
         $one_less = json_decode(json_encode($r), true);;
-      
+
         return $one_less;
-        
+
 
     }
 
@@ -52,17 +52,17 @@ static public function sendArticle(Request $request){
     }
 
     static public function getOneMassageByName($name){
-    
+
     }
 
 
     static public function insertProduct(){
-    
-       
+
+
         $newPost = DatabaseService::connecttodb()
         ->getReference('produits')
         /*->push([
-            
+
             "nom" => "Massage au Miel",
             "prix" => 35,
             "resume" => "Un massage délicat à base de miel bio",
@@ -121,16 +121,16 @@ static public function sendArticle(Request $request){
 
     static public function getArticles(){
         $art = Articles::select(
-            'articles.'.Articles::CORPS, 
-            'articles.'.Articles::ID, 
+            'articles.'.Articles::CORPS,
+            'articles.'.Articles::ID,
             'articles.'.Articles::NOM,
             'articles.'.Articles::IMAGE,
             'articles.'.Articles::CREATED_AT,
-            "users.".Users::PSEUDO)->orderBy('created_at', 'DESC')
+            "users.".Users::NAME)->orderBy('created_at', 'DESC')
         ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->paginate(6);
         return $art;
     }
-
+    
     static public function getOneArticle($id){
         $art = Articles::select(
             'articles.'.Articles::CORPS, 
@@ -138,7 +138,7 @@ static public function sendArticle(Request $request){
             'articles.'.Articles::NOM,
             'articles.'.Articles::IMAGE,
             'articles.'.Articles::CREATED_AT,
-            "users.".Users::PSEUDO,
+            "users.".Users::NAME,
             "users.".Users::AVATAR)
         ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->where("articles.id",$id)->first();
         return $art;
@@ -148,12 +148,28 @@ static public function sendArticle(Request $request){
         $com = Commentaires::select(
             'commentaires.'.Commentaires::CORPS,
             'commentaires.'.Commentaires::CREATED_AT,
-            "users.".Users::PSEUDO,
+            "users.".Users::NAME,
             "users.".Users::AVATAR
         )->leftJoin('users', 'users.id', '=', 'commentaires.'.Commentaires::USER)->where("commentaires.".Commentaires::ARTICLE,$id)->get();
         ;
         return $com;
     }
 
-    
+    static public function getAllArticles(){
+        $art = Articles::select(
+            'articles.'.Articles::CORPS,
+            'articles.'.Articles::ID,
+            'articles.'.Articles::NOM,
+            'articles.'.Articles::IMAGE,
+            'articles.'.Articles::CREATED_AT,
+            "users.name")
+            ->leftJoin('users', 'users.id', '=', 'articles.'.Articles::USER)->get();
+        return $art;
+    }
+
+    static public function deleteArticle($id){
+        $art = Articles::destroy('id', $id);
+        return $art;
+    }
+
 }

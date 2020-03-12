@@ -1,0 +1,94 @@
+.dirty_fix {
+  margin-bottom: 70px;
+}
+
+.create_article {
+  margin-top: 110px;
+  margin-bottom: 30px;
+
+  a {
+    margin-left: 10px;
+
+    button {
+      width: 150px;
+      height: 40px;
+      border: 2px solid rgba(96, 180, 11, 0.6);
+      border-radius: 6px;
+      background-color: rgba(96, 180, 11, 0.6);
+      color: white;
+      transition-duration: 0.3s;
+
+      &:hover {
+        transition: all 0.3s;
+        border: 2px solid rgba(96, 180, 11, 0.6);
+        background-color: white;
+        color: rgba(96, 180, 11, 0.6);
+      }
+    }
+  }
+}
+
+.article {
+  display: inline-block;
+  margin-top: 10px;
+  border-radius: 6px;
+  padding: 10px;
+  width: 31%;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 10px;
+  line-height: 0.5;
+
+  .article-i {
+    font-weight: 600;
+  }
+
+  .article-button {
+    text-decoration: none;
+
+    button {
+      border-radius: 6px;
+      color: white;
+      transition-duration: 0.3s;
+    }
+
+    .view {
+      width: 80px;
+      height: 40px;
+      border: 2px solid rgba(96, 180, 11, 0.6);
+      background-color: rgba(96, 180, 11, 0.6);
+
+      &:hover {
+        transition: all 0.3s;
+        border: 2px solid rgba(96, 180, 11, 0.6);
+        background-color: white;
+        color: rgba(96, 180, 11, 0.6);
+      }
+    }
+
+    .delete {
+      width: 100px;
+      height: 40px;
+      border: 2px solid red;
+      background-color: red;
+
+      &:hover {
+        transition: all 0.3s;
+        border: 2px solid red;
+        background-color: white;
+        color: red;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .article {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .article {
+    width: 95%;
+  }
+}
