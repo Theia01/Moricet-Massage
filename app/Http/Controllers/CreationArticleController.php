@@ -19,7 +19,7 @@ class CreationArticleController extends Controller
    public function send(Request $request)
    {
         $this->validate($request, [
-         'name' => 'required|min:2|max:255',
+         'name' => 'required|min:2|max:55',
          'image' => 'required|max:255',
          'article' => 'required|max:100000'
          ]);
