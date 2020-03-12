@@ -12,6 +12,8 @@ class MassagesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Massages::class, 8)->create();
+        factory(App\Massages::class, 8)->create()->each(function ($massage) {
+            $massage->massages()->saveMany(factory(App\Techniques::class, 3)->make());
+        });
     }
 }
