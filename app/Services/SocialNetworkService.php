@@ -2,7 +2,7 @@
 namespace App\Services;
 
 use App\t_log;
-use App\User;
+use App\Users;
 
 use App\CustomClasses\Produit;
 
