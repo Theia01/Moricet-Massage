@@ -19,6 +19,7 @@ class AdminController extends Controller
     public function deleteArticle()
     {
         $id = Route::current()->parameter('id');
+        DataEloquentService::deleteCommentaireArticle($id);
         DataEloquentService::deleteArticle($id);
         $art = DataEloquentService::getAllArticles();
         return view('admin', ['article'=>$art ] );

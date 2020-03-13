@@ -77,6 +77,28 @@
     margin-top: 20px;
     word-wrap: break-word;
   }
+    a {
+        float: right;
+
+        .delete {
+            width: 60px;
+            height: 40px;
+            border: 2px solid red;
+            background-color: red;
+            border-radius: 6px;
+
+            &:hover {
+                transition: all 0.3s;
+                border: 2px solid red;
+                background-color: #e9605c;
+                color: red;
+            }
+
+            .trash {
+                height: 20px;
+            }
+        }
+    }
 }
 
 .one-article-comment-admin {
@@ -101,6 +123,28 @@
     margin-top: 20px;
     word-wrap: break-word;
   }
+    a {
+        float: right;
+
+        .delete {
+            width: 60px;
+            height: 40px;
+            border: 2px solid red;
+            background-color: red;
+            border-radius: 6px;
+
+            &:hover {
+                transition: all 0.3s;
+                border: 2px solid red;
+                background-color: #e9605c;
+                color: red;
+            }
+
+            .trash {
+                height: 20px;
+            }
+        }
+    }
 }
 
 .title-admin {

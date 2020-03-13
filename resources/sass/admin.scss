@@ -66,7 +66,7 @@
     }
 
     .delete {
-      width: 100px;
+      width: 60px;
       height: 40px;
       border: 2px solid red;
       background-color: red;
@@ -74,9 +74,13 @@
       &:hover {
         transition: all 0.3s;
         border: 2px solid red;
-        background-color: white;
+        background-color: #e9605c;
         color: red;
       }
+
+        .trash {
+            height: 20px;
+        }
     }
   }
 }

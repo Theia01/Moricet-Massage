@@ -45,7 +45,6 @@ Route::group(['middleware' => ['auth']], function () {
     //création d'article
     Route::get('/creationArticle', "CreationArticleController@show")->name('getAddArticle');
     Route::post('/creationArticle', "CreationArticleController@send")->name('postAddArticle');
+    Route::get('/articles/delete/commentaire/{id}', 'BlogController@deleteCommentaire');
     
 });
-
-

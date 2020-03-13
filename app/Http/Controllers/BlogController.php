@@ -44,6 +44,13 @@ class BlogController extends Controller
             return redirect('/articles/'.$id_article);
         }else{
             return redirect('/articles/'.$id_article)->with('error', 'Petit problème technique, veuillez réessayer plus tard.');
-        } 
+        }
+    }
+
+    public function deleteCommentaire(){
+        $id = Route::current()->parameter('id');
+        $id_article = DataEloquentService::getIdArticle($id);
+        DataEloquentService::deleteCommentaire($id);
+        return redirect('/articles/'.$id_article->article);
     }
 }
