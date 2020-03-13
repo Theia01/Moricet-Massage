@@ -74,6 +74,7 @@ git clone git@github.com:Theia01/Moricet-Massage.git
 Une fois cela fait, rentrez dans le fichier créé et exécutez les commandes suivantes :
 ```sh
 composer install
+composer update
 npm install
 ```
 
