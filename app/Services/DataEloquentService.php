@@ -156,10 +156,8 @@ static public function sendArticle(Request $request){
 
     static public function getCommentsFromArticle($id){
         $com = Commentaires::select(
-            'commentaires.'.Commentaires::ID,
             'commentaires.'.Commentaires::CORPS,
             'commentaires.'.Commentaires::CREATED_AT,
-            'commentaires.'.Commentaires::USER,
             "users.".Users::NAME,
             "users.".Users::AVATAR,
             "users.".Users::ROLE
@@ -184,28 +182,13 @@ static public function sendArticle(Request $request){
         return $art;
     }
 
-    static public function deleteCommentaireArticle($id){
-        $commentaire = Commentaires::where('article', $id)->delete();
-        return $commentaire;
-    }
-
-    static public function deleteCommentaire($id){
-        $commentaires = Commentaires::where('id', $id)->delete();
-        return $commentaires;
-    }
-
-    static public function getIdArticle($id){
-        $id_article = Commentaires::select(Commentaires::ARTICLE)->where('id', $id)->first();
-        return $id_article;
-    }
-
     static public function updateUser($id, $name, $email){
         try {
-
+            
             DB::table('users')
                 ->where('id', $id)
                 ->update(['name' => $name, 'email' => $email]);
-
+                
         } catch (Exception $e) {
 
             //report($e);
@@ -219,7 +202,7 @@ static public function sendArticle(Request $request){
         try {
             DB::table('commentaires')->insert(
                 ['user' => $id_user, 'article' => $id_article, 'corps'=> $message, 'created_at'=> new DateTime()]
-            );
+            );  
         } catch (Exception $e) {
             //report($e);
             return false;
@@ -252,6 +235,21 @@ static public function sendArticle(Request $request){
     static public function getLikeOfUserOnArticle($id_article, $id_user ){
         $likeslist = Likes::select( Likes::VALUE )->where([Likes::ARTICLE => $id_article, Likes::USER => $id_user] )->first();
         return $likeslist[Likes::VALUE];
+    }
+
+    static public function addLike($id_article, $id_user){
+        DB::table('likes')->insert(
+            [Likes::USER=>$id_user,Likes::ARTICLE =>$id_article, 'value'=>1]
+        );
+    }
+
+    static public function updateLike($id_article, $id_user, $value){
+        DB::table('likes')
+        ->where( [Likes::USER => $id_user, Likes::ARTICLE => $id_article] )
+        ->update(
+            ['value'=>$value]
+        )
+        ;
     }
 
 }
