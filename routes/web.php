@@ -17,9 +17,6 @@ Route::redirect('/', '/home');
 Route::get('/contact', "ContactUsController@show")->name('contact');
 Route::post('/contact', "ContactUsController@send")->name('sendcontact');
 
-Route::get('/creationArticle', "creationArticleController@show")->name('getAddArticle');
-Route::post('/creationArticle', "creationArticleController@send")->name('postAddArticle');
-
 Route::get('/produits', 'ArticleController@getProducts' )->name('product');
 
 Route::get('/produit/{id}', 'ArticleController@showProduct');
@@ -32,5 +29,11 @@ Route::get('/profil', 'ProfilController@show')->middleware('auth')->name('profil
 Route::post('/profil', 'ProfilController@update')->middleware('auth')->name('updateprofil');
 
 Auth::routes();
+
 Route::get('/admin', 'AdminController@getArticle')->name('admin');
 Route::get('delete/{id}', 'AdminController@deleteArticle');
+Route::get('modify/{id}', 'modifyArticleController@show');
+Route::get('modify/', 'modifyArticleController@send')->name('modifyArticle');
+Route::get('/creationArticle', "CreationArticleController@show")->name('getAddArticle');
+Route::post('/creationArticle', "CreationArticleController@send")->name('postAddArticle');
+

@@ -65,6 +65,20 @@
       }
     }
 
+    .modify {
+      width: 100px;
+      height: 40px;
+      border: 2px solid #edc91a;
+      background-color: #edc91a;
+
+      &:hover {
+        transition: all 0.3s;
+        border: 2px solid #edc91a;
+        background-color: white;
+        color: #edc91a;
+      }
+    }
+
     .delete {
       width: 100px;
       height: 40px;
