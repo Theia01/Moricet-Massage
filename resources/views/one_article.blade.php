@@ -6,7 +6,7 @@
     <div class="one-article-container">
         <h1 class="one-article-title">{{$article->nom}}</h1>
         <span class="one-article-author">
-            <img alt="img" class="one-article-author-image" src="{{$article->avatar}}"/>
+            <img alt="img" class="one-article-author-image" src="{{asset($article->avatar)}}"/>
             Rédigé par {{ $article->name }}, le
             {{ date('d/m/Y', strtotime($article->created_at)) }}
         </span>
@@ -18,7 +18,7 @@
         @if($commentaire->role == 1)
             <div class="one-article-comment-admin">
              <span class="one-article-author-admin">
-                 <img class="one-article-author-image-admin" alt="" src="{{ $commentaire->avatar }}"/>
+                 <img class="one-article-author-image-admin" alt="" src="{{ asset($commentaire->avatar) }}"/>
                  <span class="title-admin">admin </span>{{ $commentaire->name }}
              </span>
                 <p class="one-article-comment-corps">
@@ -28,7 +28,7 @@
         @else
             <div class="one-article-comment">
              <span class="one-article-author">
-                 <img class="one-article-author-image" alt="" src="{{ $commentaire->avatar }}"/>
+                 <img class="one-article-author-image" alt="" src="{{ asset($commentaire->avatar) }}"/>
                  <span class="title-user">user </span>{{ $commentaire->name }}
              </span>
                 <p class="one-article-comment-corps">
