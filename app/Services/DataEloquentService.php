@@ -181,13 +181,18 @@ static public function sendArticle(Request $request){
         return $art;
     }
 
+    static public function deleteCommentaireArticle($id){
+        $commentaire = Commentaires::where('article', $id)->delete();
+        return $commentaire;
+    }
+
     static public function updateUser($id, $name, $email){
         try {
-            
+
             DB::table('users')
                 ->where('id', $id)
                 ->update(['name' => $name, 'email' => $email]);
-                
+
         } catch (Exception $e) {
 
             //report($e);
