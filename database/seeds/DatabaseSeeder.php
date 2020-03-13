@@ -12,11 +12,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            MassageTableSeeder::class,
-            TarifTableSeeder::class,
-            TechniqueTableSeeder::class,
-            TechniqueTarifTableSeeder::class,
-            MassageTechniqueTableSeeder::class,
+            MassagesTableSeeder::class,
+            TechniquesTableSeeder::class,
+            UsersTableSeeder::class,
+            ArticlesTableSeeder::class,
+            CommentairesTableSeeder::class,
+            LikesTableSeeder::class
         ]);
     }
 }

@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
 use App\t_log;
-use App\User;
+use App\Users;
 
 use App\CustomClasses\Produit;
 

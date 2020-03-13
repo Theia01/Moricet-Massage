@@ -1,0 +1,28 @@
+.profil{
+    max-width: 700px;
+    margin: 100px auto;
+}
+
+.profile_div {
+    margin-top: 40px;
+}
+
+.div-avatar {
+    width: 210px;
+    float: left;
+    display: inline-block;
+}
+
+.profile_picture{
+    width : 150px;
+    height : 150px;
+    object-fit: cover;
+    border-radius: 100px;
+    border: 5px solid red;
+    margin-bottom: 10px;
+}
+
+.profile-panel-right {
+    float: right;
+    display: inline-block;
+}

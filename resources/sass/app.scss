@@ -1,6 +1,25 @@
+
+@import 'article';
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+// Pages
 @import 'home';
 @import 'header';
 @import 'product';
 @import 'contact';
 @import 'footer';
+@import 'one_article';
 @import 'one_product';
+@import 'page404';
+@import 'register';
+@import 'admin';
+@import 'profil';
+@import 'creationArticle';

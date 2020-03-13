@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use App\Users;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 class RegisterController extends Controller
 {
     /*
@@ -51,8 +52,9 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'email:filter', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'avatar' => ['required','image', 'mimes:jpeg,png,jpg,gif,svg', 'max:4096'],
         ]);
     }
 
@@ -60,14 +62,25 @@ class RegisterController extends Controller
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
-     * @return \App\User
+     * @return \App\Users
      */
     protected function create(array $data)
     {
-        return User::create([
+        $user = Users::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        if( request()->hasFile('avatar') ){
+            $avatar = $user->id.'-'.request()->file('avatar')->getClientOriginalName().".".request()->file('avatar')->getClientOriginalExtension();
+            $avatar_picture = 'uploads/images/avatar/'.$avatar;
+            request()->file('avatar')->storeAs('images/avatar',$avatar,"my_upload");
+            $user->update(['avatar'=>$avatar_picture]);
+        } 
+
+         return $user;
+
+        
     }
 }

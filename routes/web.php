@@ -11,13 +11,40 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+//HOME
+Route::get('/home', function () {return view('home');})->name('home');
+Route::redirect('/', '/home');
 
+//CONTACT
 Route::get('/contact', "ContactUsController@show")->name('contact');
 Route::post('/contact', "ContactUsController@send")->name('sendcontact');
 
-Route::get('/produits', 'ArticleController@getProducts' )->name('product');
 
-Route::get('/produit/{name}', 'ArticleController@showProduct');
+//PRODUIT
+Route::get('/produits', 'ArticleController@getProducts' )->name('product');
+Route::get('/produit/{id}', 'ArticleController@showProduct');
+
+//ARTICLE
+Route::get('/articles', 'BlogController@getArticles')->name('articles');
+Route::get('/articles/{id}', 'BlogController@showArticle');
+Route::post('/addcomment', 'BlogController@addComment')->middleware('auth')->name("addcomment");
+
+Auth::routes();
+
+//SI ON EST CONNECTER
+Route::group(['middleware' => ['auth']], function () {
+
+    //PROFIL
+    Route::get('/profil', 'ProfilController@show')->name('profil');
+    Route::post('/profil', 'ProfilController@update')->name('updateprofil');
+
+    //ADMIN
+    Route::get('/admin', 'AdminController@getArticle')->name('admin');
+    //supprime article
+    Route::get('delete/{id}', 'AdminController@deleteArticle');
+    //création d'article
+    Route::get('/creationArticle', "CreationArticleController@show")->name('getAddArticle');
+    Route::post('/creationArticle', "CreationArticleController@send")->name('postAddArticle');
+    Route::get('/articles/delete/commentaire/{id}', 'BlogController@deleteCommentaire');
+    Route::get('/articles/{id}/like', 'BlogController@likeArticle');
+});

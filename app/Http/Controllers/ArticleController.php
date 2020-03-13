@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Services\DatabaseService;
+use App\Services\DataEloquentService;
 use App\Services\DataJsonService;
 use Illuminate\Http\Request;
 use Route;
@@ -9,14 +10,19 @@ use Route;
 class ArticleController extends Controller
 {
     public function getProducts(){
-        $massages = DataJsonService::getMassages();
+        $massages = DataEloquentService::getMassages();
         return view('product', ['massages'=>$massages ] );
     }
 
     public function showProduct(){
-        $name = Route::current()->parameter('name');
-        $massage = DataJsonService::getOneMassageByName($name );
-        return view('one_product', ['massage'=>$massage ] );
+        $id = Route::current()->parameter('id');
+        $massage = DataEloquentService::getOneMassageByName($id);
+        $technique = DataEloquentService::getTechnique($id);
+        if($massage->isEmpty() && $technique->isEmpty()){
+            return view('errors.404');
+        }else{
+            return view('one_product', ['technique'=>$technique, 'massage'=>$massage] );
+        }
     }
 
 }
