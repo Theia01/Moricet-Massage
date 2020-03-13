@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
             $table->string("avatar")->default("/images/avatar/hamster.gif");
             $table->boolean("active")->default(1);
             $table->softDeletes();
+            
         });
     }
 
