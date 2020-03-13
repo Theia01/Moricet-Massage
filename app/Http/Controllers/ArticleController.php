@@ -18,7 +18,11 @@ class ArticleController extends Controller
         $id = Route::current()->parameter('id');
         $massage = DataEloquentService::getOneMassageByName($id);
         $technique = DataEloquentService::getTechnique($id);
-        return view('one_product', ['technique'=>$technique, 'massage'=>$massage] );
+        if($massage->isEmpty() || $technique->isEmpty()){
+            return view('errors.404');
+        }else{
+            return view('one_product', ['technique'=>$technique, 'massage'=>$massage] );
+        }
     }
 
 }

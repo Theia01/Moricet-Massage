@@ -194,6 +194,18 @@ static public function sendArticle(Request $request){
             return false;
 
         }
-        return "lol";
+        return True;
+    }
+
+    static public function addcomment($id_article, $id_user, $message){
+        try {
+            DB::table('commentaires')->insert(
+                ['user' => $id_user, 'article' => $id_article, 'corps'=> $message, 'created_at'=> new DateTime()]
+            );  
+        } catch (Exception $e) {
+            //report($e);
+            return false;
+        }
+        return True;
     }
 }
