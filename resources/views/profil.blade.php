@@ -23,6 +23,7 @@
         <div class="div-avatar form-group {{ $errors->has('avatar') ? 'has-error' : '' }}">
             <img alt="profile" src="{{ asset(Auth::user()->avatar) }}" class="profile_picture" /><br>
             <span class="avatar-upload-button">{!! Form::file('avatar') !!}</span>
+            <span class="text-danger">{{ $errors->first('avatar') }}</span>
         </div>
 
         <div class="profile-panel-right">

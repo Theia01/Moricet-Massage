@@ -15,7 +15,8 @@ class ProfilController extends Controller
     public function update(Request $request){
         $this->validate($request, [
             'name' => 'required|min:2|max:30',
-            'email' => 'required|email:filter'
+            'email' => 'required|email:filter',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif,svg|max:4096'
             ]);
         
         if( request()->hasFile('avatar') ){
