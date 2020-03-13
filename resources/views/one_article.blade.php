@@ -41,6 +41,7 @@
                      <button class="delete"><img alt="trash" class="trash" src="{{ asset('images/trash.png') }}"></button>
                  </a>
                  @endif
+                 
              </span>
                 <p class="one-article-comment-corps">
                     {{ $commentaire->corps }}

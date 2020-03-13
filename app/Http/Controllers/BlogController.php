@@ -19,7 +19,13 @@ class BlogController extends Controller
         $art = DataEloquentService::getOneArticle($id);
         $comments = DataEloquentService::getCommentsFromArticle($id);
         $likes = DataEloquentService::getLikes($id);
-        $user_like = DataEloquentService::getLikeOfUserOnArticle($id,2);
+
+        $user_like = null;
+        if( !empty(Auth::user())  ){            
+            $id_user = Auth::user()->id;
+            $user_like = DataEloquentService::getLikeOfUserOnArticle($id,$id_user);
+        }
+
         if($art == NULL){ //si l'utilisateur demande un article qui n'existe pas
             return view('errors.404');
         }else{
@@ -55,4 +61,26 @@ class BlogController extends Controller
         DataEloquentService::deleteCommentaire($id);
         return redirect('/articles/'.$id_article->article);
     }
+
+    public function likeArticle(){
+        $id_article = Route::current()->parameter('id');
+        $id_user = Auth::user()->id;
+
+        $user_like = DataEloquentService::getLikeOfUserOnArticle($id,$id_user);
+
+        if( is_null($user_like) ){
+            DataEloquentService::addLike($id_article,$id_user);
+        } else {
+            if($user_like == 0){
+                DataEloquentService::updateLike($id_article,$id_user,1);
+            } else {
+                DataEloquentService::updateLike($id_article,$id_user,0);
+            }
+        }
+
+        return redirect('/articles/'.$id_article);
+
+        
+    }
+
 }
