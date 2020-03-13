@@ -66,7 +66,7 @@ class BlogController extends Controller
         $id_article = Route::current()->parameter('id');
         $id_user = Auth::user()->id;
 
-        $user_like = DataEloquentService::getLikeOfUserOnArticle($id,$id_user);
+        $user_like = DataEloquentService::getLikeOfUserOnArticle($id_article,$id_user);
 
         if( is_null($user_like) ){
             DataEloquentService::addLike($id_article,$id_user);
