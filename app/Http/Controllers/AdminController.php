@@ -22,7 +22,7 @@ class AdminController extends Controller
         DataEloquentService::deleteCommentaireArticle($id);
         DataEloquentService::deleteArticle($id);
         $art = DataEloquentService::getAllArticles();
-        return view('admin', ['article'=>$art ] );
+        return redirect('/admin');
     }
 
 }
