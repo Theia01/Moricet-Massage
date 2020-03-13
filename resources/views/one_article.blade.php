@@ -13,7 +13,7 @@
         <span class="one-article-corps">{!! $article->corps !!}</span>
         <br><br>
         <span class="one-article-likes">
-        <a href="{{ route('login') }}">
+        <a href='{{URL::current()}}/like'>
         @if(empty($user_like)) 
             <img src="{{ asset('/images/icons/heart0.png') }}"> 
         @else
@@ -23,8 +23,9 @@
             <img src="{{ asset('/images/icons/heart0.png') }}"> 
             @endif
         @endif
-        {{ $likes }}
         </a>
+        {{ $likes }}
+        
         </span>
     </div>
 </div>
