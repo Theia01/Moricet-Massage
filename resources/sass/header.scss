@@ -58,7 +58,7 @@
         margin-top: 6px;
     }
 
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1050px) {
         ul {
             margin-right: 0;
             list-style: none;
@@ -70,7 +70,11 @@
             margin-top: 6px;
         }
 
-        .hide-login span, .hide-register span, .hide-admin span {
+        .hide-login span,
+        .hide-register span,
+        .hide-admin span,
+        .hide-profile span,
+        .hide-logout span {
             display: none;
             width: 0;
         }
@@ -78,6 +82,55 @@
         .hide-login:after {
             vertical-align: middle;
             content: '↩';
+            line-height: 0;
+            font-size: 28px;
+        }
+
+        .hide-profile {
+            text-align: center;
+            vertical-align: middle;
+            height: 40px;
+            width: 40px;
+            background-color: dodgerblue;
+            border: 2px solid dodgerblue;
+            color: white;
+            border-radius: 5px;
+            float: right;
+            margin: 0;
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid dodgerblue;
+                color: dodgerblue;
+            }
+        }
+
+        .hide-profile:after {
+            content: '☺';
+            font-size: 28px;
+        }
+
+        .hide-logout {
+            text-align: center;
+            height: 40px;
+            width: 40px;
+            background-color: red;
+            border: 2px solid red;
+            color: white;
+            border-radius: 5px;
+            float: right;
+            margin: 0;
+
+            &:hover {
+                background-color: transparent;
+                border: 2px solid red;
+                color: red;
+            }
+        }
+
+        .hide-logout:after {
+            vertical-align: middle;
+            content: '⇥';
             line-height: 0;
             font-size: 28px;
         }
@@ -129,7 +182,7 @@
         .hide-admin:after {
             text-align: center;
             vertical-align: middle;
-            content: 'A';
+            content: '⚙';
             line-height: 0;
             font-size: 36px;
         }

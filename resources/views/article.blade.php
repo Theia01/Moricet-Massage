@@ -19,4 +19,6 @@
 
 {{ $articles->links() }}
 
+<div class="dirty_fix"></div>
+
 @endsection
