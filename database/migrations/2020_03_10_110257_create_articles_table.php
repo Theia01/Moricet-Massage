@@ -17,7 +17,7 @@ class CreateArticlesTable extends Migration
             $table->bigIncrements('id');
             $table->string("nom");
             $table->string("image");
-            $table->text("corps");
+            $table->longtext("corps");
             $table->unsignedBigInteger('user');
             $table->timestamps();
 
