@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Massages;
 use App\Services\FolderService;
 use App\Techniques;
 use Faker\Generator as Faker;
@@ -20,8 +21,6 @@ $factory->define(Techniques::class, function (Faker $faker) {
         'duree' => $faker->numberBetween(10, 200),
         'created_at' => $faker->dateTime,
         'updated_at' => $faker->dateTime,
-        'massages_id' => function() {
-            return factory(App\Massages::class)->create()->id;
-            },
+        'massages_id' => Massages::all()->random()->id,
     ];
 });
