@@ -14,13 +14,13 @@
         <br><br>
         <span class="one-article-likes">
         <a href='{{URL::current()}}/like'>
-        @if(empty($user_like)) 
-            <img src="{{ asset('/images/icons/heart0.png') }}"> 
+        @if(empty($user_like))
+            <img src="{{ asset('/images/icons/heart0.png') }}">
         @else
             @if($user_like==1)
-            <img src="{{ asset('/images/icons/heart1.png') }}"> 
+            <img src="{{ asset('/images/icons/heart1.png') }}">
             @else
-            <img src="{{ asset('/images/icons/heart0.png') }}"> 
+            <img src="{{ asset('/images/icons/heart0.png') }}">
             @endif
         @endif
         </a>
@@ -30,6 +30,7 @@
 </div>
 <h1 class="one-article-comment-section-title">Commentaires</h1>
     @foreach ($commentaires as $key => $commentaire)
+        @auth
         @if(Auth::user()->role == 1)
             <div class="one-article-comment-admin">
              <span class="one-article-author-admin">
@@ -59,6 +60,7 @@
                 </p>
             </div>
         @endif
+        @endauth
     @endforeach
 
     @if (session('error'))
