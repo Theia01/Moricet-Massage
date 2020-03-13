@@ -114,3 +114,19 @@
   text-transform: uppercase;
   font-weight: bold;
 }
+
+.add-comment {
+  margin-top: 50px;
+  border-left: 5px solid white;
+  width: 70%;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+
+  .title-add-comment{
+    font-size: 24px;
+  }
+}
