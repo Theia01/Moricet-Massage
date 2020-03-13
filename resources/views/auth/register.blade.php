@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('S\'enregistrer') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="form-group row">
@@ -61,10 +61,23 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="avatar" class="col-md-4 col-form-label text-md-right">{{ __('Avatar') }}</label>
+
+                            <div class="col-md-6">
+                                <input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
+                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar">
+
+                                @error('avatar')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="cgu" required id="cgu">
-
                                     <label class="form-check-label" for="cgu">
                                         J'accepte les <a href="/legal/cgu.php">Conditions Générales d'Utilisation</a>
                                     </label>

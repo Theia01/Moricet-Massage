@@ -2,3 +2,14 @@
     max-width: 700px;
     margin: 100px auto;
 }
+
+.profile_picture{
+    width : 150px;
+    height : 150px;
+    object-fit: cover;
+    border-radius: 100px; 
+}
+
+.div-avatar{
+    float: left;
+}

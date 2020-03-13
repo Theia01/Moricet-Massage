@@ -19,6 +19,12 @@
     @endif
     
     {!! Form::open(['route'=>'updateprofil']) !!}
+        <div class="div-avatar form-group {{ $errors->has('avatar') ? 'has-error' : '' }}">
+            <img src="{{ asset(Auth::user()->avatar) }}" class="profile_picture" /><br>
+            {!! Form::label('Avatar:') !!}<br>
+            {!! Form::file('avatar') !!}
+        </div>
+
         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
             {!! Form::label('Nom:') !!}
             {!! Form::text('name', Auth::user()->name, ['class'=>'form-control', 'placeholder'=>'Entrez votre prénom']) !!}
