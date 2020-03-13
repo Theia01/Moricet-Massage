@@ -14,6 +14,7 @@ use App\t_log;
 use App\Users;
 use App\Articles;
 use App\Commentaires;
+use App\Likes;
 use App\CustomClasses\Produit;
 
 use App\Eloquent\Massage;
@@ -240,6 +241,17 @@ static public function sendArticle(Request $request){
 
         }
         return "ok";
+    }
+
+    static public function getLikes($id_article){
+        $likeslist = Likes::select( Likes::VALUE )->where([Likes::ARTICLE => $id_article, Likes::VALUE => 1] )->get();
+        $LikeCount = $likeslist->count();
+        return $LikeCount;
+    }
+
+    static public function getLikeOfUserOnArticle($id_article, $id_user ){
+        $likeslist = Likes::select( Likes::VALUE )->where([Likes::ARTICLE => $id_article, Likes::USER => $id_user] )->first();
+        return $likeslist[Likes::VALUE];
     }
 
 }

@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             TechniquesTableSeeder::class,
             UsersTableSeeder::class,
             ArticlesTableSeeder::class,
-            CommentairesTableSeeder::class
+            CommentairesTableSeeder::class,
+            LikesTableSeeder::class
         ]);
     }
 }

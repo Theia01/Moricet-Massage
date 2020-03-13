@@ -18,10 +18,12 @@ class BlogController extends Controller
         $id = Route::current()->parameter('id');
         $art = DataEloquentService::getOneArticle($id);
         $comments = DataEloquentService::getCommentsFromArticle($id);
+        $likes = DataEloquentService::getLikes($id);
+        $user_like = DataEloquentService::getLikeOfUserOnArticle($id,2);
         if($art == NULL){ //si l'utilisateur demande un article qui n'existe pas
             return view('errors.404');
         }else{
-            return view('one_article', ['article'=>$art,'commentaires'=>$comments ] );
+            return view('one_article', ['article'=>$art,'commentaires'=>$comments,'likes'=>$likes,'user_like' => $user_like ] );
         }
     }
 

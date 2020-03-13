@@ -11,6 +11,21 @@
             {{ date('d/m/Y', strtotime($article->created_at)) }}
         </span>
         <span class="one-article-corps">{!! $article->corps !!}</span>
+        <br><br>
+        <span class="one-article-likes">
+        <a href='{{URL::current()}}/like'>
+        @if(empty($user_like)) 
+            <img src="{{ asset('/images/icons/heart0.png') }}"> 
+        @else
+            @if($user_like==1)
+            <img src="{{ asset('/images/icons/heart1.png') }}"> 
+            @else
+            <img src="{{ asset('/images/icons/heart0.png') }}"> 
+            @endif
+        @endif
+        </a>
+        {{ $likes }}
+        </span>
     </div>
 </div>
 <h1 class="one-article-comment-section-title">Commentaires</h1>
