@@ -24,7 +24,7 @@ class CreateTechniquesTable extends Migration
             $table->integer('duree');
             $table->timestamps();
             
-            $table->foreign('massages_id')->references('id')->on('massages');
+            $table->foreign('massages_id')->references('id')->on('massages')->onDelete('cascade');
         });
     }
 

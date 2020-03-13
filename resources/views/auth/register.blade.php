@@ -65,7 +65,7 @@
 
                             <div class="col-md-6">
                                 <input type="hidden" name="MAX_FILE_SIZE" value="30000000" />
-                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar">
+                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}"  autocomplete="avatar">
 
                                 @error('avatar')
                                     <span class="invalid-feedback" role="alert">

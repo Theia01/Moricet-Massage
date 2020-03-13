@@ -1,7 +1,6 @@
 @extends('general')
 
 @section('content')
-<link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
 <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
@@ -31,7 +30,7 @@
         </div>
     @endif
 
-    {!! Form::open(['route'=>'postAddArticle']) !!}
+    {!! Form::open(['route'=>'postAddArticle','files' =>true,'enctype'=>'multipart/form-data']) !!}
         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
             {!! Form::label('Nom:') !!}
             {!! Form::text('name', old('name'), ['class'=>'form-control','id'=>'inputNom', 'placeholder'=>'Entrez le nom de votre article']) !!}
@@ -39,7 +38,16 @@
         </div>
         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
             {!! Form::label('Image:') !!}
-            {!! Form::text('image', old('image'), ['class'=>'form-control','id'=>'inputImage', 'placeholder'=>'Entrez le lien vers votre image']) !!}
+             <div class="col-md-6">
+                                <input type="hidden" class='form-control' id='inputImage' name="MAX_FILE_SIZE" value="30000000" />
+                                <input id="avatar" type="file" class="form-control @error('avatar') is-invalid @enderror" name="avatar" value="{{ old('avatar') }}" required autocomplete="avatar">
+
+                                @error('avatar')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
             <span class="text-danger">{{ $errors->first('image') }}</span>
         </div>
         <div class="form-group {{ $errors->has('message') ? 'has-error' : '' }}" >

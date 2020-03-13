@@ -50,10 +50,10 @@ class DataEloquentService {
 
     }
 
-static public function sendArticle(Request $request){
+static public function sendArticle(Request $request,$url){
         try {
-            DB::table('articles')->insert(
-                ['nom' => $request->name, 'image' => $request->image, 'corps'=> $request->article, 'user'=> Auth::user()->id, 'created_at'=> new DateTime()]
+            return DB::table('articles')->insert(
+                ['nom' => $request->name, 'image' => $url, 'corps'=> $request->article, 'user'=> Auth::user()->id, 'created_at'=> new DateTime()]
             );
 
         } catch (Exception $e) {
