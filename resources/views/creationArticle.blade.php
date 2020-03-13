@@ -8,8 +8,12 @@
 <link href="css/editor.css" type="text/css" rel="stylesheet"/>
 <script src="/js/editor.js"></script>
 
+
+
+
 <div class="contact">
     <div class="container">
+        <div  id="edition">
 @auth
 @if(Auth::user()->role == 1)
     <h2>RÃ©digez un article</h2>
@@ -30,12 +34,12 @@
     {!! Form::open(['route'=>'postAddArticle']) !!}
         <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
             {!! Form::label('Nom:') !!}
-            {!! Form::text('name', old('name'), ['class'=>'form-control', 'placeholder'=>'Entrez le nom de votre article']) !!}
+            {!! Form::text('name', old('name'), ['class'=>'form-control','id'=>'inputNom', 'placeholder'=>'Entrez le nom de votre article']) !!}
             <span class="text-danger">{{ $errors->first('name') }}</span>
         </div>
         <div class="form-group {{ $errors->has('email') ? 'has-error' : '' }}">
             {!! Form::label('Image:') !!}
-            {!! Form::text('image', old('image'), ['class'=>'form-control', 'placeholder'=>'Entrez le lien vers votre image']) !!}
+            {!! Form::text('image', old('image'), ['class'=>'form-control','id'=>'inputImage', 'placeholder'=>'Entrez le lien vers votre image']) !!}
             <span class="text-danger">{{ $errors->first('image') }}</span>
         </div>
         <div class="form-group {{ $errors->has('message') ? 'has-error' : '' }}" >
@@ -47,32 +51,61 @@
 
         <div class="form-group {{ $errors->has('message') ? 'has-error' : '' }}">
         <div id="txtEditor" ></div>
-        <script type="text/javascript">$(document).ready(function() {$("#txtEditor").Editor();});
-        editor = $('.Editor-editor');
-        $("body").on('DOMSubtreeModified',  $('.Editor-editor'), function() {
-            $("#textarea-form").val($('.Editor-editor').html());
-        }); 
-        </script>
-
         </div>
+        </div>
+        <div class="one-article" id="previsu">
+    
+            <div class="one-article-container" >
+                <h1 class="one-article-title" id="nom"></h1>
+                <span class="one-article-author">
+                    
+                    <span class="one-article-corps" id=image></span>
+                </span>
+                <span class="one-article-corps" id=corp></span>
+            </div>
+        </div>
+        
+        <input type="button" value="Prévisualiser l'article" onclick="previsualisation('edition','previsu');" />
 
         <div class="form-group">
             <button class="btn btn-success">Publiez votre article</button>
         </div>
-        
+    </div>
+       
 
         
     {!! Form::close() !!}
-@else
-
-@endif
+    @else
 <h2>Connectez-vous en administrateur</h2>
-@else
-<h2>Connectez-vous en administrateur</h2>
-@endauth
+    @endif
+    
+    @else
+    <h2>Connectez-vous en administrateur</h2>
+    @endauth
+        
     </div>
 
+    <script type="text/javascript"> function previsualisation(ide,idp){
+        if (document.getElementById(ide).style.display == 'none'){document.getElementById(ide).style.display = 'block';}
+        else{document.getElementById(ide).style.display = 'none';}
+        if (document.getElementById(idp).style.display == 'block'){document.getElementById(idp).style.display = 'none';}
+        else{document.getElementById(idp).style.display = 'block';}
+        
+        document.querySelector("#corp").innerHTML = document.querySelector("#textarea-form").value
+    }
+    </script>
+    <script type="text/javascript">
+        $('#inputNom').on('input',function(e){$("#nom").html($(this).val());});
+    </script>
+    <script type="text/javascript">
+        $('#inputImage').on('input',function(e){$("#image").html($(this).val());});
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {$("#txtEditor").Editor();});
+        editor = $('.Editor-editor');
+        $("body").on('DOMSubtreeModified',  $('.Editor-editor'), function() {
+            $("#textarea-form").val($('.Editor-editor').html());
+        }); 
+    </script>
 
-
-</div>
-@endsection
+    @endsection
