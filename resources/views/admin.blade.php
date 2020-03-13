@@ -17,7 +17,7 @@
                         <button class="view">Voir</button>
                     </a>
                     <a href="delete/{{ $articles->id }}">
-                        <button class="delete  glyphicon glyphicon-trash"></button>
+                        <button class="delete">Supprimer</button>
                     </a>
                 </div>
             </div>
