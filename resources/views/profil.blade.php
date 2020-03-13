@@ -18,7 +18,7 @@
         </div>
     @endif
     
-    {!! Form::open(['route'=>'updateprofil']) !!}
+    {!! Form::open(['route'=>'updateprofil','files' =>true,'enctype'=>'multipart/form-data']) !!}
         <div class="div-avatar form-group {{ $errors->has('avatar') ? 'has-error' : '' }}">
             <img src="{{ asset(Auth::user()->avatar) }}" class="profile_picture" /><br>
             {!! Form::label('Avatar:') !!}<br>
