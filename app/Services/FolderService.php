@@ -38,7 +38,7 @@ class FolderService {
         $scan_path =  public_path().$path;
         $fileList = array_slice(scandir($scan_path),2);
         foreach($fileList as $filename){
-            if ( getimagesize($scan_path.'/'.$filename) [2] ){
+            if ( @getimagesize($scan_path.'/'.$filename) [2] ){
             array_push($all_files,$path."/".$filename);
             }
         }
