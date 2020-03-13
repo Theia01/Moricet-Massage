@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
             $table->rememberToken();
             $table->integer("role")->nullable();
-            $table->string("avatar")->nullable();
+            $table->string("avatar")->default("/images/avatar/hamster.gif");
             $table->boolean("active")->default(1);
             $table->softDeletes();
         });
