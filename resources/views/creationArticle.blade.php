@@ -66,10 +66,11 @@
         </div>
         
         <input type="button" value="Prévisualiser l'article" onclick="previsualisation('edition','previsu');" />
-        </div>
+
         <div class="form-group">
             <button class="btn btn-success">Publiez votre article</button>
         </div>
+    </div>
        
 
         
