@@ -17,8 +17,8 @@ Route::redirect('/', '/home');
 Route::get('/contact', "ContactUsController@show")->name('contact');
 Route::post('/contact', "ContactUsController@send")->name('sendcontact');
 
-Route::get('/creationArticle', "creationArticleController@show")->name('getAddArticle');
-Route::post('/creationArticle', "creationArticleController@send")->name('postAddArticle');
+Route::get('/creationArticle', "CreationArticleController@show")->name('getAddArticle');
+Route::post('/creationArticle', "CreationArticleController@send")->name('postAddArticle');
 
 Route::get('/produits', 'ArticleController@getProducts' )->name('product');
 
