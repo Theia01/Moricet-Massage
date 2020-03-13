@@ -7,7 +7,7 @@
     @if ( ($loop->index)%2 == 0 )
     <div  class="bloc_m left">
         <div class="bloc_image_l">
-            <img alt="massage" src="{{ asset('images/'.$massage['image']) }}">
+            <img alt="massage" src="{{ asset($massage['image']) }}">
 
         </div>
 
@@ -26,7 +26,7 @@
     <div  class="bloc_m right">
 
         <div class="bloc_image_r mobile">
-            <img alt="massage" src="{{ asset('images/'.$massage['image']) }}">
+            <img alt="massage" src="{{ asset($massage['image']) }}">
 
         </div>
 
@@ -42,7 +42,7 @@
         </div>
 
         <div class="bloc_image_r screen">
-            <img alt="massage" src="{{ asset('images/'.$massage['image']) }}">
+            <img alt="massage" src="{{ asset($massage['image']) }}">
 
         </div>
 
