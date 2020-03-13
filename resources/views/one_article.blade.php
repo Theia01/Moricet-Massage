@@ -20,6 +20,9 @@
              <span class="one-article-author-admin">
                  <img class="one-article-author-image-admin" alt="" src="{{ $commentaire->avatar }}"/>
                  <span class="title-admin">admin </span>{{ $commentaire->name }}
+                 <a href="delete/{{ $article->id }}">
+                     <button class="delete glyphicon glyphicon-trash"></button>
+                 </a>
              </span>
                 <p class="one-article-comment-corps">
                     {{ $commentaire->corps }}
@@ -30,6 +33,9 @@
              <span class="one-article-author">
                  <img class="one-article-author-image" alt="" src="{{ $commentaire->avatar }}"/>
                  <span class="title-user">user </span>{{ $commentaire->name }}
+                 <a href="delete/{{ $article->id }}">
+                     <button class="delete glyphicon glyphicon-trash"></button>
+                 </a>
              </span>
                 <p class="one-article-comment-corps">
                     {{ $commentaire->corps }}

@@ -77,6 +77,29 @@
     margin-top: 20px;
     word-wrap: break-word;
   }
+    a {
+         float: right;
+
+         button {
+             border-radius: 6px;
+             color: white;
+             transition-duration: 0.3s;
+         }
+
+         .delete {
+             width: 60px;
+             height: 40px;
+             border: 2px solid red;
+             background-color: red;
+
+             &:hover {
+                 transition: all 0.3s;
+                 border: 2px solid red;
+                 background-color: white;
+                 color: red;
+             }
+         }
+     }
 }
 
 .one-article-comment-admin {
@@ -101,6 +124,29 @@
     margin-top: 20px;
     word-wrap: break-word;
   }
+    a {
+        float: right;
+
+        button {
+            border-radius: 6px;
+            color: white;
+            transition-duration: 0.3s;
+        }
+
+        .delete {
+            width: 60px;
+            height: 40px;
+            border: 2px solid red;
+            background-color: red;
+
+            &:hover {
+                transition: all 0.3s;
+                border: 2px solid red;
+                background-color: white;
+                color: red;
+            }
+        }
+    }
 }
 
 .title-admin {
