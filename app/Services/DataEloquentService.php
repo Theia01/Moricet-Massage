@@ -158,9 +158,9 @@ static public function sendArticle(Request $request){
             'commentaires.'.Commentaires::CORPS,
             'commentaires.'.Commentaires::CREATED_AT,
             "users.".Users::NAME,
-            "users.".Users::AVATAR
-        )->leftJoin('users', 'users.id', '=', 'commentaires.'.Commentaires::USERS)->where("commentaires.".Commentaires::ARTICLE,$id)->get();
-        ;
+            "users.".Users::AVATAR,
+            "users.".Users::ROLE
+        )->leftJoin('users', 'users.id', '=', 'commentaires.'.Commentaires::USER)->where("commentaires.".Commentaires::ARTICLE,$id)->get();
         return $com;
     }
 
