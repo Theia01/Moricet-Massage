@@ -10,7 +10,8 @@
 
 <div class="contact">
     <div class="container">
-
+@auth
+@if(Auth::user()->role == 1)
     <h2>Rédigez un article</h2>
     <p></p>
 
@@ -62,7 +63,13 @@
 
         
     {!! Form::close() !!}
+@else
 
+@endif
+<h2>Connectez-vous en administrateur</h2>
+@else
+<h2>Connectez-vous en administrateur</h2>
+@endauth
     </div>
 
 
