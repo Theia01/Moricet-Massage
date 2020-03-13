@@ -75,9 +75,9 @@
         
     {!! Form::close() !!}
     @else
-
+<h2>Connectez-vous en administrateur</h2>
     @endif
-    <h2>Connectez-vous en administrateur</h2>
+    
     @else
     <h2>Connectez-vous en administrateur</h2>
     @endauth
