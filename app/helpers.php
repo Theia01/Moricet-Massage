@@ -13,7 +13,7 @@ function formTime($time,$price){
 }
 
 function truncate($string, $value){
-  return substr($string,0,$value).'...';
+  return strip_tags(substr($string,0,$value).'...');
 }
 
 
