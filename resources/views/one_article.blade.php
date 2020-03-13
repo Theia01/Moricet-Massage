@@ -31,7 +31,7 @@
 <h1 class="one-article-comment-section-title">Commentaires</h1>
     @foreach ($commentaires as $key => $commentaire)
         @auth
-        @if(Auth::user()->role == 1)
+        @if($commentaire->role == 1)
             <div class="one-article-comment-admin">
              <span class="one-article-author-admin">
                  <img class="one-article-author-image-admin" alt="" src="{{ asset($commentaire->avatar) }}"/>
