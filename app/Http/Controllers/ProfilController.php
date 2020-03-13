@@ -17,12 +17,21 @@ class ProfilController extends Controller
             'name' => 'required|min:2|max:30',
             'email' => 'required|email:filter'
             ]);
+        
+        if( request()->hasFile('avatar') ){
+            $avatar = Auth::user()->id.'-'.request()->file('avatar')->getClientOriginalName().".".request()->file('avatar')->getClientOriginalExtension();
+            $avatar_picture = 'uploads/images/avatar/'.$avatar;
+            request()->file('avatar')->storeAs('images/avatar',$avatar,"my_upload");
+            //$user->update(['avatar'=>$avatar_picture]);
+            DataEloquentService::updateAvatarUser(Auth::user()->id,$avatar_picture);
+        } 
 
         $updateUser = DataEloquentService::updateUser(Auth::user()->id, $request->name, $request->email);
+        
 
         if($updateUser){
             return redirect('profil')->with('success', 'Modification du profil enregistrés !');
-        }else{
+        } else {
             return redirect('profil')->with('error', 'Petit problème technique, veuillez réessayer plus tard.');
         } 
             
