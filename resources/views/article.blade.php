@@ -1,6 +1,13 @@
 @extends('general')
 
 @section('content')
+ @auth
+        @if(Auth::user()->role == 1)
+            <div class="create_article">
+                <a href="creationArticle"><button>Ajouter un article</button></a>
+            </div>
+        @endif
+    @endauth
 
 <div class="spacer"></div>
 
