@@ -59,7 +59,7 @@
                 {!! Form::close() !!}
             </div>
         @else
-            <p>Pour pouvoir commentez connectez-vous</p>
+            <p class="connect-for-comment"><a href="{{ route('login') }}">Pour pouvoir commenter connectez-vous</a></p>
         @endauth
     
     <div class="dirty_fix"></div>
