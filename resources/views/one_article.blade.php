@@ -36,7 +36,7 @@
              <span class="one-article-author-admin">
                  <img class="one-article-author-image-admin" alt="" src="{{ asset($commentaire->avatar) }}"/>
                  <span class="title-admin">admin </span>{{ $commentaire->name }}
-                 @if($commentaire->user == Auth::user()->id)
+                 @if($commentaire->user == Auth::user()->id || Auth::user()->role == 1)
                  <a href="delete/commentaire/{{ $commentaire->id }}">
                      <button class="delete"><img alt="trash" class="trash" src="{{ asset('images/trash.png') }}"></button>
                  </a>
@@ -52,7 +52,7 @@
              <span class="one-article-author">
                  <img class="one-article-author-image" alt="" src="{{ asset($commentaire->avatar) }}"/>
                  <span class="title-user">user </span>{{ $commentaire->name }}
-                 @if($commentaire->user == Auth::user()->id)
+                 @if($commentaire->user == Auth::user()->id || Auth::user()->role == 1)
                  <a href="delete/commentaire/{{ $commentaire->id }}">
                      <button class="delete"><img alt="trash" class="trash" src="{{ asset('images/trash.png') }}"></button>
                  </a>
