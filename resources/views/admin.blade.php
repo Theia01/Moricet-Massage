@@ -27,7 +27,7 @@
     @else
         <div class="error">
             <div class="message_error">
-                <p>Vous n'êtes pas connecté en tant qu'admin</p>
+                <p>Vous n'êtes pas connecté en tant qu'administrateur</p>
             </div>
             <div class="button">
                 <a href="{{ route("home") }}"><button>Accueil</button></a>
