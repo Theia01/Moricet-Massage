@@ -208,4 +208,21 @@ static public function sendArticle(Request $request){
         }
         return True;
     }
+
+    static public function updateAvatarUser($id, $avatar){
+        try {
+            
+            DB::table('users')
+                ->where('id', $id)
+                ->update(['avatar' => $avatar]);
+                
+        } catch (Exception $e) {
+
+            //report($e);
+            return false;
+
+        }
+        return "ok";
+    }
+
 }
