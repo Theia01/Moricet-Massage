@@ -16,6 +16,9 @@
                     <a href="articles/{{ $articles->id }}">
                         <button class="view">Voir</button>
                     </a>
+                    <a href="modify/{{ $articles->id }}">
+                        <button class="modify">Modifier</button>
+                    </a>
                     <a href="delete/{{ $articles->id }}">
                         <button class="delete">Supprimer</button>
                     </a>
@@ -27,7 +30,7 @@
     @else
         <div class="error">
             <div class="message_error">
-                <p>Vous n'êtes pas connecté en tant qu'admin</p>
+                <p>Vous n'êtes pas connecté en tant qu'administrateur</p>
             </div>
             <div class="button">
                 <a href="{{ route("home") }}"><button>Accueil</button></a>
