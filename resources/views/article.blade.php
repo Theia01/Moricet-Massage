@@ -12,7 +12,7 @@
                 <img class="image" alt="L'image définie par l'auteur est invalide." src="{{asset($article->image) }}"/>
             </div>
             <p class="content"> {{ truncate($article->corps,50) }} </p>
-            <p class="info"> Created the {{ date('d/m/Y', strtotime($article->created_at))}} by <span class="author">{{ $article->name }}</span>.</p>
+            <p class="info"> Ecrit le {{ date('d/m/Y', strtotime($article->created_at))}} par <span class="author">{{ $article->name }}</span>.</p>
         </div>
     </a>
 @endforeach
