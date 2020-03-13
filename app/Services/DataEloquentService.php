@@ -210,7 +210,6 @@ static public function sendArticle(Request $request){
         return True;
     }
 
-<<<<<<< HEAD
     static public function updateAvatarUser($id, $avatar){
         try {
             
@@ -227,8 +226,6 @@ static public function sendArticle(Request $request){
         return "ok";
     }
 
-=======
->>>>>>> 71b8d0914646b0645f4fc7a8b696a3efc3460b8d
     static public function getLikes($id_article){
         $likeslist = Likes::select( Likes::VALUE )->where([Likes::ARTICLE => $id_article, Likes::VALUE => 1] )->get();
         $LikeCount = $likeslist->count();
