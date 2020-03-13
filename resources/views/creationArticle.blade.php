@@ -107,27 +107,4 @@
         }); 
     </script>
 
-<<<<<<< Upstream, based on origin/develop
-        </div>
-
-        <div class="form-group">
-            <button class="btn btn-success">Publiez votre article</button>
-        </div>
-        
-
-        
-    {!! Form::close() !!}
-
-@endif
-@else
-<h2>Connectez-vous en administrateur</h2>
-@endauth
-    </div>
-
-
-
-</div>
-@endsection
-=======
     @endsection
->>>>>>> 050aac0 FIX#Previsualisation Articles.
