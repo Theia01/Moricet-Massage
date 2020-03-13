@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Services\DataEloquentService;
 use Illuminate\Http\Request;
-
+use Auth;
 class CreationArticleController extends Controller
 {
     /**
@@ -20,11 +20,20 @@ class CreationArticleController extends Controller
    {
         $this->validate($request, [
          'name' => 'required|min:2|max:255',
-         'image' => 'required|max:255',
+         'image' => 'image',
          'article' => 'required|max:100000'
          ]);
 
-         $sendArticle = DataEloquentService::sendArticle($request);
+         if( request()->hasFile('avatar') ){
+            $avatar = Auth::user()->id.'-'.request()->file('avatar')->getClientOriginalName().".".request()->file('avatar')->getClientOriginalExtension();
+            $article_picture = 'uploads/images/article/'.$avatar;
+            request()->file('avatar')->storeAs('images/article',$avatar,"my_upload");
+            //$user->update(['avatar'=>$avatar_picture]);
+        } 
+
+         $sendArticle = DataEloquentService::sendArticle($request,$article_picture);
+
+        
 
          if($sendArticle){
             return redirect('creationArticle')->with('success', 'Article posté !');
