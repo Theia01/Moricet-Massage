@@ -33,4 +33,6 @@ Route::post('/profil', 'ProfilController@update')->middleware('auth')->name('upd
 
 Auth::routes();
 Route::get('/admin', 'AdminController@getArticle')->name('admin');
-Route::get('delete/{id}', 'AdminController@deleteArticle');
+Route::get('/delete/{id}', 'AdminController@deleteArticle');
+
+Route::get('/articles/delete/commentaire/{id}', 'BlogController@deleteCommentaire');

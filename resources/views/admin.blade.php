@@ -17,7 +17,7 @@
                         <button class="view">Voir</button>
                     </a>
                     <a href="delete/{{ $articles->id }}">
-                        <button class="delete">Supprimer</button>
+                        <button class="delete"><img alt="trash" class="trash" src="{{ asset('images/trash.png') }}"></button>
                     </a>
                 </div>
             </div>

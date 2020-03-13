@@ -20,6 +20,9 @@
              <span class="one-article-author-admin">
                  <img class="one-article-author-image-admin" alt="" src="{{ $commentaire->avatar }}"/>
                  <span class="title-admin">admin </span>{{ $commentaire->name }}
+                 <a href="delete/commentaire/{{ $commentaire->id }}">
+                     <button class="delete"><img alt="trash" class="trash" src="{{ asset('images/trash.png') }}"></button>
+                 </a>
              </span>
                 <p class="one-article-comment-corps">
                     {{ $commentaire->corps }}
@@ -30,6 +33,11 @@
              <span class="one-article-author">
                  <img class="one-article-author-image" alt="" src="{{ $commentaire->avatar }}"/>
                  <span class="title-user">user </span>{{ $commentaire->name }}
+                 @if($commentaire->user == Auth::user()->id)
+                 <a href="delete/commentaire/{{ $commentaire->id }}">
+                     <button class="delete"><img alt="trash" class="trash" src="{{ asset('images/trash.png') }}"></button>
+                 </a>
+                 @endif
              </span>
                 <p class="one-article-comment-corps">
                     {{ $commentaire->corps }}
@@ -42,7 +50,7 @@
         <div class="alert alert-danger">
             {{ session('error') }}
         </div>
-    @endif    
+    @endif
         @auth
             <div class="add-comment">
                 {!! Form::open(['route'=>'addcomment']) !!}
@@ -61,7 +69,7 @@
         @else
             <p class="connect-for-comment"><a href="{{ route('login') }}">Pour pouvoir commenter connectez-vous</a></p>
         @endauth
-    
+
     <div class="dirty_fix"></div>
 
 @endsection
